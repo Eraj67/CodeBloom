@@ -3,7 +3,7 @@
 Learn. Practice. Build. Grow.
 
 CodeBloom is an open-source web development learning platform built to help beginners learn programming through structured lessons, hands-on coding challenges, 
-and real-world projects.
+And real-world projects.
 This project is being developed as a real-world passion project with the goal of making coding education simple, practical, and accessible for everyone.
 
 🚀 Vision
@@ -57,6 +57,14 @@ Feel free to fork the repository and submit a pull request.
 CodeBloom isn't just another tutorial website.
 It is a real-world project created to improve both the learning experience for future students and the development skills of its contributors.
 Every feature is built with the goal of making programming education more engaging, practical, and accessible.
+
+👥 Contributors
+This project is built through collaboration between passionate developers.
+
+  Contributor 
+Eraj | Project Lead, Founder & Frontend Developer 
+Noor | Backend Developer 
+Jason | Frontend Developer 
 
 💙 Support
 If you like this project, consider giving it a ⭐ on GitHub.

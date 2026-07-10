@@ -249,6 +249,7 @@ body{
     transition:.3s;
 }
 
+
 .challenge-card:hover{
     background:#1b1b1b;
     border-color:#f6d88f;
@@ -350,7 +351,34 @@ body{
     background:#ffe6ab;
     transform:translateY(-3px);
 }
+/*======================
+    SEARCH BAR
+    =======================*/
+.search-container {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: flex-end;
+    margin: 25px 5px;
+}
 
+#challengeSearch {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px 16px;
+    border: 2px solid #232220;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    background-color: #1b1b1b;
+    color: #fff;
+}
+
+
+#challengeSearch:hover {   
+     transform:translateY(-2px);
+    border-color: #f6d88f;
+
+}
 
 /* =========================
    FOOTER

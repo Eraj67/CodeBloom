@@ -55,6 +55,21 @@ body{
 .logo{
     font-size:38px;
     font-weight:700;
+    color:#fff;
+    text-decoration:none;   
+    transition:.3s;
+}
+
+.logo .code {
+    color: #ffffff; 
+}
+
+.logo .bloom {
+    color: #f4c542; 
+}
+
+.logo:hover{
+    color:#000539;
 }
 
 .navbar{
@@ -81,56 +96,58 @@ body{
     justify-content:center;
     align-items:center;
     gap:100px;
-    padding:70px 50px;
-}
-
-.sidebar{
-    width:280px;
-    background:#111;
-    border:1px solid #222;
-    border-radius:18px;
-    padding:25px;
-        margin-left:-60px;
-
-}
-
-.quote{
-    font-size:28px;
-    font-style:italic;
-    line-height:1.4;
-    margin-bottom:35px;
-}
-
-.sidebar ul{
-    list-style:none;
-}
-
-.sidebar li{
-    margin:18px 0;
-}
-
-.sidebar a{
-    color:#d0d0d0;
-    text-decoration:none;
-}
-
-.sidebar a:hover{
-    color:#f6d88f;
+    padding:120px 60px;
 }
 
 .hero-content{
-    max-width:650px;
+    padding:20px 35px;
 }
 
-.hero-content h1{
+.hero-content h2{
     font-size:72px;
     line-height:1.1;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .hero-content p{
     font-size:22px;
     color:#b8b8b8;
+    line-height:1.1;
+    max-width:650px;
+    margin-bottom:40px;
+}
+
+.hero-sub{
+    color:#9ca3af;
+    font-size:18px;
+    margin-bottom:35px;
+}
+
+.hero-tag{
+    color:#f6d88f;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    display:inline-block;
+    margin-bottom:20px;
+}
+
+.tech-stack{
+    display:flex;
+    gap:15px;
+    margin-top:35px;
+    flex-wrap:wrap;
+    align-items: center;
+}
+
+.tech-stack span{
+    border:1px solid #333;
+    background:#111;
+    padding:10px 18px;
+    border-radius:30px;
+    color:#ddd;
+    font-size:15px;
 }
 
 #hero-main h5{

@@ -53,23 +53,35 @@ body{
 }
 
 .logo{
+    display:flex;
+    align-items:center;
     font-size:38px;
     font-weight:700;
     color:#fff;
-    text-decoration:none;   
+    text-decoration:none;
     transition:.3s;
 }
 
-.logo .code {
-    color: #ffffff; 
+.logo-img{
+    width: 30px;
+    height:40px;
+    object-fit:contain;
+    flex-shrink:0;
+    display:block;
+    margin-right: 10px;
+
 }
 
-.logo .bloom {
-    color: #f4c542; 
+.logo .code{
+    color:#fff;
+}
+
+.logo .bloom{
+    color:#f4c542;
 }
 
 .logo:hover{
-    color:#000539;
+    opacity:0.85;
 }
 
 .navbar{

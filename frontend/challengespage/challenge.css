@@ -1137,3 +1137,126 @@ button.press{
         transform:translateY(0);
     }
 }
+
+/*  RESPNSIVENESS */
+
+/* TABLETS */
+@media(max-width:1024px){
+
+    .about-container{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .aniamtion-contanier{
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
+
+    .browser-window{
+        width:100%;
+        max-width:500px;
+    }
+
+    .bottom-bar{
+        flex-direction:column;
+        gap:30px;
+    }
+}
+
+
+/* mobile */
+@media(max-width:700px){
+
+    .about-container{
+        display:flex;
+        flex-direction:column;
+        gap:24px;
+        width:100%;
+    }
+
+    .about{
+        width:100%;
+    }
+
+    .aniamtion-contanier{
+        width:100%;
+        max-width:100%;
+        display:flex;
+        justify-content:center;
+        margin:0;
+        overflow-x:auto;
+    }
+
+    .browser-window{
+        width:100%;
+        max-width:100%;
+        box-sizing:border-box;
+    }
+
+    .browser-header{
+        padding:10px 12px;
+        gap:8px;
+    }
+
+    .browser-header .dot{
+        width:10px;
+        height:10px;
+    }
+
+    /* shrink text/padding inside the demo previews */
+    .dashboard,
+    .form-demo,
+    .counter-demo,
+    .api-demo,
+    .todo-demo,
+    .demo-landing,
+    .css-animation-demo,
+    .code-area,
+    .animation-box{
+        font-size:13px;
+        padding:14px;
+        box-sizing:border-box;
+    }
+
+    .input-area{
+        display:flex;
+        flex-wrap:wrap;
+        gap:8px;
+        width:100%;
+    }
+
+    .input-area input{
+        flex:1 1 100%;
+        min-width:0;
+        box-sizing:border-box;
+    }
+
+    .input-area button{
+        flex:0 0 auto;
+    }
+
+    .counter-demo h1{
+        font-size:36px;
+    }
+
+    .info-bar{
+        flex-direction:column;
+        gap:14px;
+        text-align:left;
+    }
+
+    .bottom-bar{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .left-side{
+        width:100%;
+    }
+
+    .progress-box{
+        width:100%;
+    }
+}

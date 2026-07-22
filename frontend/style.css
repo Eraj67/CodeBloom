@@ -171,6 +171,67 @@ body{
 
 }
 
+/* =========================
+   HOME PAGE ANIMATIONS
+========================= */
+
+/* Hero entrance slides*/
+@keyframes fadeUp{
+    from{ opacity:0; transform:translateY(20px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+.hero-content .hero-tag{
+    animation:fadeUp .9s ease forwards;
+    opacity:0;
+}
+.hero-content h2{
+    animation:fadeUp .9s ease forwards;
+    animation-delay:.1s;
+    opacity:0;
+}
+.hero-content p{
+    animation:fadeUp .9s ease forwards;
+    animation-delay:.6s;
+    opacity:0;
+}
+.hero-content .hero-sub{
+    animation:fadeUp .6s ease forwards;
+    animation-delay:.3s;
+    opacity:0;
+}
+.hero-content .button-group{
+    animation:fadeUp .6s ease forwards;
+    animation-delay:.4s;
+    opacity:0;
+}
+.hero-content .tech-stack{
+    animation:fadeUp .6s ease forwards;
+    animation-delay:.5s;
+    opacity:0;
+}
+
+/* Tech stack float */
+@keyframes floatPill{
+    0%, 100%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+}
+.tech-stack span{
+    display:inline-block;
+    animation:floatPill 3s ease-in-out infinite;
+}
+.tech-stack span:nth-child(2){ animation-delay:.2s; }
+.tech-stack span:nth-child(3){ animation-delay:.4s; }
+.tech-stack span:nth-child(4){ animation-delay:.6s; }
+.tech-stack span:nth-child(5){ animation-delay:.8s; }
+
+/* Card hover glow */
+.card{
+    transition: transform .3s ease, box-shadow .3s ease, background .3s ease;
+}
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 24px rgba(246, 216, 143, 0.15);
+}
 
 /* =========================
    ABOUT HERO
@@ -409,26 +470,339 @@ body{
 
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FAQ TOGGLE Help page */
 
-footer{
-    margin-top:auto;
-    text-align:center;
-    padding:20px;
-    border-top:1px solid #222;
-    background:#0b0b0b;
+.faq-card{
+    cursor:pointer;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+.faq-question{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
 
-@media(max-width:900px){
+.faq-toggle{
+    font-size:22px;
+    color:#f6d88f;
+    transition:.3s;
+}
 
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    color:#b8b8b8;
+    line-height:1.6;
+    transition:max-height .3s ease;
+}
+
+.faq-card.open .faq-answer{
+    max-height:200px;
+    margin-top:12px;
+}
+
+.faq-card.open .faq-toggle{
+    transform:rotate(45deg);
+}
+
+
+/* FOOTER */
+.site-footer{
+    background:#0b0b0b;
+    border-top:1px solid #222;
+    padding:50px 50px 20px;
+}
+
+.footer-top{
+    max-width:1100px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    justify-content:space-between;
+}
+
+.footer-brand .logo{
+    font-size:28px;
+}
+
+.footer-col{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.footer-heading{
+    font-size:13px;
+    color:#f6d88f;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:5px;
+}
+
+.footer-col a{
+    color:#b8b8b8;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+.footer-col a:hover{
+    color:#f6d88f;
+}
+
+.footer-socials{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.footer-socials a{
+    width:36px;
+    height:36px;
+    border-radius:50%;
+    background:#181818;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-socials a:hover{
+    background:#f6d88f;
+    color:#050505;
+}
+
+.footer-bottom{
+    text-align:center;
+    padding-top:30px;
+    margin-top:30px;
+    border-top:1px solid #222;
+    font-size:13px;
+    color:#888;
+} 
+
+/* RESPONSIVENESs */
+/*
+   RESPONSIVE - TABLETS (max-width: 1024px)
+ */
+@media(max-width:1024px){
+
+    /* header */
+    .site-header{
+        padding:20px 30px;
+    }
+
+    /* hero */
+    .hero{
+        flex-direction:column;
+        gap:40px;
+        padding:50px 30px;
+    }
+
+    .sidebar{
+        width:100%;
+        margin-left:0;
+    }
+
+    .hero-content h1,
+    .hero-content h2{
+        font-size:52px;
+    }
+
+    /* course/project/challenge grids */
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* footer */
+    .footer-top{
+        gap:30px;
+    }
+
+    /* contact page */
     .contact-layout{
         grid-template-columns:1fr;
     }
 
+    /* challenge pages */
+    .about-container{
+        flex-direction:column;
+    }
+
+    .bottom-bar{
+        flex-direction:column;
+    }
+
+    .info-bar{
+        flex-wrap:wrap;
+        gap:20px;
+    }
+}
+
+
+/*
+   RESPONSIVE mobile*/
+@media(max-width:700px){
+
+    /* header + nav */
+    .site-header{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+        text-align:center;
+    }
+
+    .navbar{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:16px;
+    }
+
+    .logo-img{
+        height:32px;
+    }
+
+    /* hero */
+    .hero{
+        padding:40px 20px;
+    }
+
+    .hero-content h1,
+    .hero-content h2{
+        font-size:32px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    .hero-sub{
+        font-size:14px;
+    }
+
+    .button-group{
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+}
+
+.button-group .card{
+    width:auto;
+    min-width:160px;
+    max-width:220px;
+    text-align:center;
+    padding:14px 20px;
+}
+
+    .tech-stack{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    /* about-hero (used on Help, Privacy, About, course pages) */
+    .about-title{
+        font-size:34px;
+    }
+
+    /* grids/cards - courses, projects, challenges, faq */
+    .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .challenge-card{
+        padding:18px 20px;
+    }
+
+    .section{
+        padding:40px 20px;
+    }
+
+    .section-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    /* FAQ (Help page) */
+    .faq-question h3{
+        font-size:16px;
+    }
+
+    /* footer */
+    .footer-top{
+        flex-direction:column;
+        gap:30px;
+        text-align:left;
+    }
+
+    .footer-socials{
+        margin-top:10px;
+    }
+
+    /* contact page */
+    .contact-layout{
+        grid-template-columns:1fr;
+    }
+
+    .contact-form{
+        padding:25px;
+    }
+
+    /* search bar (Challenge page) */
+    .search-container{
+        padding:0 20px;
+    }
+
+    .search-container input{
+        width:100%;
+    }
+
+    /* challenge detail pages */
+    .about-container{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .aniamtion-contanier,
+    .browser-window{
+        width:100%;
+    }
+
+    .info-bar{
+        flex-direction:column;
+        gap:16px;
+        text-align:left;
+    }
+
+    .bottom-bar{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .left-side{
+        width:100%;
+    }
+}
+
+
+/* 
+ LARGE SCREENS  */
+@media(min-width:1400px){
+
+    .section{
+        max-width:1300px;
+    }
+
+    .hero-content h1,
+    .hero-content h2{
+        font-size:80px;
+    }
+
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

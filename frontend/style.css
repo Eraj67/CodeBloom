@@ -441,6 +441,11 @@ body{
     background:#ffe6ab;
     transform:translateY(-3px);
 }
+/* icon color */
+.contact-info .card h3 i{
+    color:#f6d88f;
+    margin-right:6px;
+}
 /*======================
     SEARCH BAR
     =======================*/

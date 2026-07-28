@@ -202,14 +202,8 @@ body{
     font-size:30px;
 }
 
-/* =========== WHAT TO LEARN ========== */
-.learn{
-    padding:25px;
-    border:1px solid #444;
-    border-radius:12px;
-}
-
-/* ============ DESCRIPTION =========== */
+/* =========== WHAT TO LEARN AND DESCRIPTION ========== */
+.learn,
 .description {
     padding:25px;
     border:1px solid #444;
@@ -1288,40 +1282,27 @@ button.press{
 }
 
 .progress{
-
     stroke:#f4c542;
-
     stroke-linecap:round;
-
     stroke-dasharray:440;
-
     stroke-dashoffset:264;
-
     transition:.6s;
 }
 
 .progress-text{
-
     position:absolute;
-
     top:50%;
-
     left:50%;
-
     transform:translate(-50%,-50%);
 }
 
 .progress-text h3{
-
     font-size:34px;
-
     margin:0;
 }
 
 .progress-text p{
-
     color:#aaa;
-
     margin-top:6px;
 }
 

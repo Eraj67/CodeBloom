@@ -76,7 +76,7 @@ body{
 }
 
 .logo .bloom{
-    color:#f4c542;
+    color:#f6d88f;
 }
 
 .logo:hover{
@@ -95,6 +95,10 @@ body{
 }
 
 .navbar a:hover{
+    color:#f6d88f;
+}
+
+.navbar a.active{
     color:#f6d88f;
 }
 
@@ -372,67 +376,130 @@ body{
    CONTACT PAGE
 ========================= */
 
-.contact-layout{
+.contact{
+    width:90%;
+    max-width:1200px;
+    margin:100px auto;
+}
+
+.contact-box{
     display:grid;
-    grid-template-columns:1fr 1.5fr;
-    gap:40px;
-    align-items:start;
-}
-
-.contact-info{
-    display:flex;
-    flex-direction:column;
-    gap:25px;
-}
-
-.contact-form{
+    grid-template-columns:350px 1fr;
     background:#111;
-    border:1px solid #222;
-    border-radius:18px;
-    padding:35px;
+    border:1px solid #2a2a2a;
+    border-radius:20px;
+    overflow:hidden;
 }
 
-.contact-form form{
+/* LEFT */
+
+.contact-left{
+    background:#0e0e0e;
+    padding:60px 45px;
+}
+
+.contact-left h2{
+    color:white;
+    font-size:42px;
+    margin:15px 0;
+}
+
+.contact-left p{
+    color:#bdbdbd;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+/* EMAIL CARD */
+
+.email-card{
     display:flex;
-    flex-direction:column;
-    gap:20px;
+    align-items:center;
+    gap:18px;
+    background:#171717;
+    padding:18px;
+    border-radius:12px;
+    border:1px solid #2b2b2b;
+    margin-bottom:35px;
 }
 
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:16px;
-    background:#181818;
-    color:#fff;
-    border:1px solid #222;
-    border-radius:12px;
-    outline:none;
-    font-size:16px;
-    font-family:inherit;
+.email-card span{
+    font-size:28px;
+}
+
+.email-card h4{
+    color:white;
+    margin-bottom:4px;
+}
+
+.email-card p{
+    margin:0;
+    color:#cfcfcf;
+}
+
+/* SOCIAL */
+
+.social-links{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border:1px solid #2d2d2d;
+    border-radius:30px;
     transition:.3s;
 }
 
-.contact-form textarea{
-    resize:vertical;
-    min-height:180px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
+.social-links a:hover{
     border-color:#f6d88f;
+    color:#f6d88f;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder{
-    color:#9b9b9b;
+/* RIGHT */
+
+.contact-right{
+    padding:60px;
+    background:#151515;
 }
 
-.contact-form button{
-    width:fit-content;
-    padding:15px 32px;
-    background:#f6d88f;
-    color:#050505;
+.input-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.contact-right input,
+.contact-right textarea{
+    width:100%;
+    background:#1d1d1d;
+    color:white;
+    border:1px solid #2c2c2c;
+    border-radius:12px;
+    padding:16px;
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+.contact-right textarea{
+    height:180px;
+    resize:none;
+}
+
+.contact-right input:focus,
+.contact-right textarea:focus{
+    outline:none;
+    border-color:#f4c542;
+}
+
+.contact-right button{
+    background:#f4c542;
+    color:#111;
     border:none;
+    padding:16px 35px;
     border-radius:12px;
     font-size:16px;
     font-weight:600;
@@ -440,15 +507,12 @@ body{
     transition:.3s;
 }
 
-.contact-form button:hover{
-    background:#ffe6ab;
-    transform:translateY(-3px);
+.contact-right button:hover{
+    background:#ffd867;
+    transform:translateY(-2px);
 }
-/* icon color */
-.contact-info .card h3 i{
-    color:#f6d88f;
-    margin-right:6px;
-}
+
+
 /*======================
     SEARCH BAR
     =======================*/

@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>Code Bloom - Challenges</title>
+        <title>CSS Animation Challenge</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
@@ -117,7 +117,6 @@
 
 
 <section class="learn">
-    <div class="bar">
      
       <h2>📚 What You'll Learn</h2>
 
@@ -130,7 +129,6 @@
         </ul>
       </div>
 
-    </div>
 </section>
 
 <section class="description">
@@ -153,9 +151,37 @@
 </div>
 
 <section class="progress">
-  <div class="progress-box">
+<div class="progress-card">
+
     <h2>Progress</h2>
-   </div>
+
+    <div class="progress-ring">
+
+        <svg width="170" height="170">
+            <circle
+                class="bg"
+                cx="85"
+                cy="85"
+                r="70">
+            </circle>
+
+            <circle
+                class="progress"
+                cx="85"
+                cy="85"
+                r="70">
+            </circle>
+        </svg>
+
+        <div class="progress-text">
+            <h3>40%</h3>
+            <p>Completed</p>
+        </div>
+
+    </div>
+
+</div>
+
 </section>
 
 </section>
@@ -204,5 +230,6 @@
 </footer>
 
         <script src="script.js"></script>
+        <script src="progress.js"></script>
     </body>
 </html>

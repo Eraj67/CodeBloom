@@ -1,0 +1,643 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050505;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.project-page{
+    width:85%;
+    max-width:1400px;
+    margin:70px auto;
+}
+
+/* ================= HERO ================= */
+
+.project-hero{
+    display:grid;
+    grid-template-columns:1fr 520px;
+    gap:70px;
+    align-items:center;
+    margin-bottom:70px;
+}
+
+.hero-left h1{
+    font-size:58px;
+    margin-bottom:15px;
+}
+
+.project-info{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    color:#d8d8d8;
+    margin-bottom:25px;
+}
+
+.project-desc{
+    max-width:650px;
+    font-size:20px;
+    color:#b5b5b5;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+/* Buttons */
+
+.button-group{
+    display:flex;
+    gap:18px;
+}
+
+.btn-primary,
+.btn-secondary{
+    padding:18px 30px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#f4c542;
+    color:#111;
+}
+
+.btn-secondary{
+    background:#1a1a1a;
+    color:white;
+    border:1px solid #333;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+}
+
+.btn-secondary:hover{
+    background:#222;
+}
+
+/* ================= CONTENT ================= */
+
+.project-content{
+    display:grid;
+    grid-template-columns:1fr 340px;
+    gap:45px;
+}
+
+.content-left{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.content-card{
+    background:#151515;
+    border:1px solid #2c2c2c;
+    border-radius:18px;
+    padding:35px;
+}
+
+.content-card h3{
+    margin-bottom:18px;
+}
+
+.content-card p{
+    color:#b8b8b8;
+    line-height:1.8;
+}
+
+.content-card ul{
+    padding-left:20px;
+    line-height:2;
+}
+
+.content-right{
+    position:sticky;
+    top:110px;
+}
+
+/* ========================= PROGRESS CARD ======================== */
+
+.progress{
+    display:flex;
+    justify-content:center;
+}
+
+.progress-card{
+    width:100%;
+    background:#141414;
+    border:1px solid #2b2b2b;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+}
+
+.progress-card h2{
+    margin-bottom:35px;
+    font-size:32px;
+}
+
+.progress-ring{
+    position:relative;
+    width:170px;
+    height:170px;
+    margin:auto;
+}
+
+.progress-ring svg{
+    transform:rotate(-90deg);
+}
+
+.progress-ring circle{
+    fill:none;
+    stroke-width:10;
+}
+
+.progress-ring .bg{
+    stroke:#2f2f2f;
+}
+
+.progress-ring .progress{
+    stroke:#f4c542;
+    stroke-linecap:round;
+
+    stroke-dasharray:440;
+    stroke-dashoffset:264;   /* 40% complete */
+}
+
+
+
+/* ========================= PROJECT PREVIEW ========================= */
+
+.preview-container{
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-start;
+}
+
+.preview{
+    width:auto;
+    height: auto;
+    background:#171717;
+    border:1px solid #2d2d2d;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.preview-top{
+    height:48px;
+    background:#232323;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:0 18px;
+}
+
+.preview-top span{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#666;
+}
+
+.preview-body{
+    padding:28px;
+}
+
+.preview-body nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:55px;
+}
+
+.preview-body nav h4{
+    font-size:20px;
+    color:#fff;
+}
+
+.preview-body nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+.preview-body nav li{
+    font-size:13px;
+    color:#bdbdbd;
+}
+
+.preview-body .hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+.preview-body .content h2{
+    font-size:34px;
+    line-height:1.1;
+    color:#fff;
+    margin-bottom:15px;
+}
+
+.preview-body .content p{
+    color:#bcbcbc;
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:25px;
+}
+
+.preview-body .content button{
+    padding:12px 28px;
+    background:#f4c542;
+    color:#111;
+    border:none;
+    border-radius:10px;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.profile{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#f4c542,#ffd86b);
+    flex-shrink:0;
+}
+
+/* =========================== LANDING PAGE PREVIEW ============================= */
+
+.landing-preview{
+    padding:0;
+}
+
+.landing-navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 22px;
+}
+
+.landing-logo{
+    width:75px;
+    height:18px;
+    background:#f4c542;
+    border-radius:5px;
+}
+
+.landing-navbar ul{
+    display:flex;
+    gap:16px;
+    list-style:none;
+    font-size:11px;
+    color:#d4d4d4;
+}
+
+.landing-showcase{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:35px 22px;
+}
+
+.landing-content{
+    width:58%;
+}
+
+.landing-content h2{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.landing-content p{
+    font-size:13px;
+    color:#bdbdbd;
+    line-height:1.5;
+    margin-bottom:18px;
+}
+
+.landing-content button{
+    padding:10px 22px;
+    border:none;
+    border-radius:8px;
+    background:#f4c542;
+    color:#111;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.landing-image{
+    width:120px;
+    height:120px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#6d5dfc,#8b5cf6);
+}
+
+.landing-features{
+    display:flex;
+    gap:15px;
+    padding:0 22px 22px;
+}
+
+.feature-card{
+    flex:1;
+    height:75px;
+    background:#232323;
+    border-radius:12px;
+}
+
+/* ========================== TODO PREVIEW ========================== */
+
+.todo-preview{
+    padding:25px;
+}
+
+.todo-title{
+    font-size:26px;
+    margin-bottom:25px;
+}
+
+.todo-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.todo-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#222;
+    padding:14px;
+    border-radius:10px;
+}
+
+.check{
+    width:18px;
+    height:18px;
+    border:2px solid #f4c542;
+    border-radius:50%;
+    flex-shrink:0;
+}
+
+.todo-item.completed .check{
+    background:#f4c542;
+}
+
+.todo-item.completed p{
+    text-decoration:line-through;
+    color:#888;
+}
+
+.todo-input{
+    display:flex;
+    gap:12px;
+    margin-bottom:25px;
+}
+
+.input-box{
+    flex:1;
+    height:42px;
+    background:#2b2b2b;
+    border-radius:8px;
+}
+
+.todo-input button{
+    padding:0 18px;
+    border:none;
+    border-radius:8px;
+    background:#f4c542;
+    color:#111;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.todo-footer{
+    border-top:1px solid #2d2d2d;
+    padding-top:15px;
+    color:#bcbcbc;
+    font-size:14px;
+}
+
+/* =============== WEATHER APP PREVIEW =================== */
+
+.weather-preview{
+    padding:28px;
+    text-align:center;
+}
+
+.weather-city h3{
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.weather-main{
+    margin-bottom:28px;
+}
+
+.weather-icon{
+    font-size:48px;
+    margin-bottom:8px;
+}
+
+.weather-main h1{
+    font-size:42px;
+    margin-bottom:6px;
+}
+
+.weather-main p{
+    color:#bdbdbd;
+}
+
+.weather-info{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:30px;
+}
+
+.weather-info h4{
+    font-size:20px;
+    margin-bottom:5px;
+}
+
+.weather-info span{
+    font-size:13px;
+    color:#9f9f9f;
+}
+
+.forecast{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+}
+
+.day-card{
+    flex:1;
+    background:#232323;
+    border-radius:12px;
+    padding:15px 10px;
+}
+
+.day-card p{
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.day-card span{
+    font-size:26px;
+    display:block;
+    margin-bottom:10px;
+}
+
+.day-card h5{
+    font-size:18px;
+}
+
+/* ===== E-COMMERCE PREVIEW ===== */
+
+.ecommerce-preview{
+    padding:0;
+}
+
+.shop-navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 22px;
+}
+
+.shop-navbar ul{
+    display:flex;
+    gap:18px;
+    list-style:none;
+    font-size:12px;
+}
+
+.shop-banner{
+    margin:0 22px;
+    padding:30px;
+    background:#2a2a2a;
+    border-radius:14px;
+    text-align:center;
+}
+
+.shop-banner h2{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+.shop-banner p{
+    color:#bdbdbd;
+    margin-bottom:18px;
+}
+
+.shop-banner button{
+    padding:10px 24px;
+    border:none;
+    border-radius:8px;
+    background:#f4c542;
+    color:#111;
+    font-weight:700;
+    cursor:pointer;
+}
+
+.products{
+    display:flex;
+    gap:15px;
+    padding:25px 22px;
+}
+
+.product-card{
+    flex:1;
+    background:#232323;
+    border-radius:12px;
+    padding:14px;
+    text-align:center;
+}
+
+.product-img{
+    width:100%;
+    height:70px;
+    background:#3a3a3a;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+
+.product-card h5{
+    margin-bottom:6px;
+}
+
+.product-card span{
+    color:#f4c542;
+    font-weight:700;
+}
+
+/* ============== MOVIE SEARCH PREVIEW ================= */
+
+.movie-preview{
+    padding:22px;
+}
+
+.search-box{
+    background:#232323;
+    color:#9b9b9b;
+    padding:12px 18px;
+    border-radius:10px;
+    margin-bottom:22px;
+    font-size:14px;
+}
+
+.featured-movie{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.movie-poster{
+    width:80px;
+    height:110px;
+    background:#3a3a3a;
+    border-radius:10px;
+    flex-shrink:0;
+}
+
+.movie-info h4{
+    margin-bottom:10px;
+    font-size:18px;
+}
+
+.movie-info p{
+    color:#f4c542;
+    margin-bottom:8px;
+    font-size:14px;
+}
+
+.movie-info span{
+    color:#bcbcbc;
+    font-size:13px;
+}
+
+.movie-grid{
+    display:flex;
+    gap:15px;
+}
+
+.mini-poster{
+    flex:1;
+    height:110px;
+    background:#2c2c2c;
+    border-radius:10px;
+}

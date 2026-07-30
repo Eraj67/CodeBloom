@@ -129,7 +129,22 @@
 }
 
 #signup-form-side{
-    display:none;
+    opacity:0;
+    pointer-events:none;
+}
+
+.auth-card.signup-mode .auth-panel{
+    transform: translateX(-100%);
+}
+
+.auth-card.signup-mode #login-form-side{
+    opacity:0;
+    pointer-events:none;
+}
+
+.auth-card.signup-mode #signup-form-side{
+    opacity:1;
+    pointer-events:auto;
 }
 
 /* TABLET - keep side-by-side but tighten spacing */

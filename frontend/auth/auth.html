@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Log In / Sign Up - Code Bloom</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <link rel="icon" type="image/png" href="../logo.png">
+</head>
+<body>
+
+<header class="site-header">
+    <a class="logo" href="../index.html">
+        <img src="../logo.png" alt="CodeBloom Logo" class="logo-img">
+        <span class="code">Code</span><span class="bloom">Bloom</span>
+    </a>
+    <nav class="navbar">
+        <a href="../index.html">HOME</a>
+        <a href="../courses.html">COURSES</a>
+        <a href="../project.html">PROJECT</a>
+        <a href="../challenge.html">CHALLENGE</a>
+        <a href="../about.html">ABOUT</a>
+        <a href="../contact.html">CONTACT</a>
+    </nav>
+</header>
+
+<div class="auth-wrap">
+    <div class="auth-card" id="auth-card">
+
+        <div class="auth-form-side" id="login-form-side">
+            <h2>Log In</h2>
+            <form id="login-form">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <p class="auth-switch-text">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+        </div>
+
+        <div class="auth-form-side" id="signup-form-side">
+            <h2>Create Account</h2>
+            <form id="signup-form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p class="auth-switch-text">Already have an account? <a href="#" id="show-login">Log in</a></p>
+        </div>
+
+        <div class="auth-panel" id="auth-panel">
+            <h3 id="panel-title">Welcome Back!</h3>
+            <p id="panel-text">Log in to keep learning where you left off.</p>
+            <button id="panel-btn">Sign Up</button>
+        </div>
+
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <h2 class="logo">Code<span style="color:#f6d88f;">Bloom</span></h2>
+        </div>
+        <div class="footer-col">
+            <p class="footer-heading">ABOUT US</p>
+            <a href="../about.html">About Us</a>
+            <a href="../contact.html">Contact Us</a>
+            <a href="../footerlinks/policy.html">Privacy Policy</a>
+        </div>
+        <div class="footer-col">
+            <p class="footer-heading">LESSONS</p>
+            <a href="../courses/coursespage/htmlcourse.html">HTML</a>
+            <a href="../courses/coursespage/csscourse.html">CSS</a>
+            <a href="../courses/coursespage/javascriptcourse.html">JavaScript</a>
+            <a href="../courses/coursespage/githubcourse.html">GitHub</a>
+            <a href="../courses/coursespage/responsivedesign.html">Responsive Design</a>
+        </div>
+        <div class="footer-col">
+            <p class="footer-heading">USEFUL LINKS</p>
+            <a href="../footerlinks/help.html">Help</a>
+        </div>
+        <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="ti ti-brand-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; CodeBloom 2026. All rights reserved.
+    </div>
+</footer>
+
+<script src="auth-toggle.js"></script>
+<script src="auth-form.js"></script>
+
+</body>
+</html>

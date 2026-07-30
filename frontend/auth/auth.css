@@ -1,0 +1,165 @@
+/* AUTH PAGE (login/signup) */
+
+.auth-wrap{
+    min-height:calc(100vh - 200px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:60px 20px;
+}
+
+.auth-card{
+    position:relative;
+    width:100%;
+    max-width:800px;
+    min-height:480px;
+    background:#111;
+    border:1px solid #222;
+    border-radius:18px;
+    overflow:hidden;
+    display:flex;
+}
+
+.auth-form-side{
+    width:50%;
+    padding:50px 45px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.auth-form-side h2{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.auth-form-side form{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.auth-form-side input{
+    width:100%;
+    padding:14px 16px;
+    background:#181818;
+    color:#fff;
+    border:1px solid #222;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.auth-form-side input:focus{
+    border-color:#f6d88f;
+}
+
+.auth-form-side button[type="submit"]{
+    margin-top:6px;
+    padding:14px;
+    background:#f6d88f;
+    color:#050505;
+    border:none;
+    border-radius:10px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.auth-form-side button[type="submit"]:hover{
+    background:#ffe6ab;
+}
+
+.auth-switch-text{
+    margin-top:16px;
+    font-size:13px;
+    color:#b8b8b8;
+    text-align:center;
+}
+
+.auth-switch-text a{
+    color:#f6d88f;
+    text-decoration:none;
+}
+
+.auth-panel{
+    position:absolute;
+    top:0;
+    right:0;
+    width:50%;
+    height:100%;
+    background:linear-gradient(135deg, #f6d88f, #d9b463);
+    color:#050505;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px;
+    transition:transform .6s ease;
+}
+
+.auth-panel h3{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.auth-panel p{
+    font-size:14px;
+    margin-bottom:24px;
+    opacity:.85;
+}
+
+.auth-panel button{
+    padding:12px 30px;
+    background:transparent;
+    border:1.5px solid #050505;
+    color:#050505;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.auth-panel button:hover{
+    background:#050505;
+    color:#f6d88f;
+}
+
+#signup-form-side{
+    display:none;
+}
+
+/* TABLET - keep side-by-side but tighten spacing */
+@media(max-width:1024px){
+    .auth-card{
+        max-width:650px;
+    }
+    .auth-form-side{
+        padding:40px 30px;
+    }
+    .auth-form-side h2{
+        font-size:24px;
+    }
+    .auth-panel{
+        padding:30px 25px;
+    }
+    .auth-panel h3{
+        font-size:22px;
+    }
+}
+
+/* MOBILE - stack vertically */
+@media(max-width:700px){
+    .auth-card{
+        flex-direction:column;
+        min-height:auto;
+    }
+    .auth-form-side,
+    .auth-panel{
+        width:100%;
+        position:static;
+    }
+}

@@ -1537,3 +1537,114 @@ body{
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================
+   LESSON CONTENT
+========================= */
+
+.lesson-content {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 40px;
+    line-height: 1.8;
+}
+
+.lesson-content h1,
+.lesson-content h2,
+.lesson-content h3,
+.lesson-content h4,
+.lesson-content h5,
+.lesson-content h6 {
+    color: #f6d88f;
+    margin: 24px 0 16px;
+}
+
+.lesson-content h1 { font-size: 32px; }
+.lesson-content h2 { font-size: 28px; }
+.lesson-content h3 { font-size: 24px; }
+.lesson-content h4 { font-size: 20px; }
+
+.lesson-content p {
+    color: #b8b8b8;
+    margin-bottom: 16px;
+}
+
+.lesson-content ul,
+.lesson-content ol {
+    color: #b8b8b8;
+    margin: 16px 0;
+    padding-left: 24px;
+}
+
+.lesson-content li {
+    margin-bottom: 8px;
+}
+
+.lesson-content code {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #f6d88f;
+}
+
+.lesson-content pre {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.lesson-content pre code {
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: #e0e0e0;
+}
+
+.lesson-content a {
+    color: #f6d88f;
+    text-decoration: none;
+}
+
+.lesson-content a:hover {
+    text-decoration: underline;
+}
+
+.lesson-content blockquote {
+    border-left: 4px solid #f6d88f;
+    padding-left: 20px;
+    margin: 20px 0;
+    color: #888;
+    font-style: italic;
+}
+
+.lesson-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.lesson-content th,
+.lesson-content td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: left;
+}
+
+.lesson-content th {
+    background: #1a1a1a;
+    color: #f6d88f;
+}
+
+.lesson-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}

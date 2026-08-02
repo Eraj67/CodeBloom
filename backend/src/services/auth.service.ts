@@ -1,7 +1,11 @@
 import bcrypt from "bcrypt";
 import { prisma } from "../lib/prisma";
 import { AppError } from "../lib/errors";
-import { LoginInput, SignupInput } from "../validators/auth.validator";
+import {
+  ChangePasswordInput,
+  LoginInput,
+  SignupInput,
+} from "../validators/auth.validator";
 
 const BCRYPT_ROUNDS = 12;
 
@@ -33,7 +37,11 @@ export async function signup(input: SignupInput) {
       data: {
         email: input.email,
         passwordHash,
-        profile: { create: {} },
+        profile: {
+          create: {
+            displayName: input.displayName ?? null,
+          },
+        },
       },
       select: userSelect,
     });
@@ -75,4 +83,28 @@ export async function getCurrentUser(userId: string) {
   }
 
   return user;
+}
+
+export async function changePassword(userId: string, input: ChangePasswordInput) {
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { passwordHash: true },
+  });
+
+  if (!user) {
+    throw new AppError(404, "User not found");
+  }
+
+  const valid = await bcrypt.compare(input.currentPassword, user.passwordHash);
+
+  if (!valid) {
+    throw new AppError(401, "Current password is incorrect");
+  }
+
+  const newPasswordHash = await bcrypt.hash(input.newPassword, BCRYPT_ROUNDS);
+
+  await prisma.user.update({
+    where: { id: userId },
+    data: { passwordHash: newPasswordHash },
+  });
 }

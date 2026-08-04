@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dashboard - CodeBloom</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+
+<header class="site-header">
+    <a class="logo" href="index.html">
+        <img src="logo.png" alt="CodeBloom Logo" class="logo-img">
+        <span class="code">Code</span><span class="bloom">Bloom</span>
+    </a>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html">HOME</a>
+        <a href="courses.html">COURSES</a>
+        <a href="project.html">PROJECT</a>
+        <a href="challenge.html">CHALLENGE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="dashboard.html" class="active">DASHBOARD</a>
+    </nav>
+</header>
+
+<section class="dashboard-section">
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Welcome back, <span id="dashboard-name">Learner</span>!</h1>
+            <p class="dashboard-subtitle">Track your learning journey</p>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="dashboard-stat-card">
+                <div class="stat-icon lessons-icon">
+                    <i class="ti ti-book"></i>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-number" id="dash-lessons">0</span>
+                    <span class="stat-text">Lessons Completed</span>
+                </div>
+            </div>
+            <div class="dashboard-stat-card">
+                <div class="stat-icon challenges-icon">
+                    <i class="ti ti-trophy"></i>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-number" id="dash-challenges">0</span>
+                    <span class="stat-text">Challenges Completed</span>
+                </div>
+            </div>
+            <div class="dashboard-stat-card">
+                <div class="stat-icon courses-icon">
+                    <i class="ti ti-school"></i>
+                </div>
+                <div class="stat-content">
+                    <span class="stat-number" id="dash-courses">0</span>
+                    <span class="stat-text">Courses In Progress</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="dashboard-card">
+                <h2>Course Progress</h2>
+                <div class="course-progress-list" id="course-progress-list">
+                    <div class="course-progress-item">
+                        <div class="course-progress-header">
+                            <span class="course-name">HTML</span>
+                            <span class="course-count" id="html-count">0/12</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="html-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="course-progress-item">
+                        <div class="course-progress-header">
+                            <span class="course-name">CSS</span>
+                            <span class="course-count" id="css-count">0/18</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="css-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="course-progress-item">
+                        <div class="course-progress-header">
+                            <span class="course-name">JavaScript</span>
+                            <span class="course-count" id="javascript-count">0/24</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="javascript-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="course-progress-item">
+                        <div class="course-progress-header">
+                            <span class="course-name">Git & GitHub</span>
+                            <span class="course-count" id="git-count">0/10</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="git-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="course-progress-item">
+                        <div class="course-progress-header">
+                            <span class="course-name">Responsive Design</span>
+                            <span class="course-count" id="responsive-count">0/8</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="responsive-progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h2>Quick Actions</h2>
+                <div class="quick-actions">
+                    <a href="courses.html" class="quick-action-btn">
+                        <i class="ti ti-book-2"></i>
+                        <span>Continue Learning</span>
+                    </a>
+                    <a href="challenge.html" class="quick-action-btn">
+                        <i class="ti ti-code"></i>
+                        <span>Start Challenge</span>
+                    </a>
+                    <a href="project.html" class="quick-action-btn">
+                        <i class="ti ti-rocket"></i>
+                        <span>Build Project</span>
+                    </a>
+                    <a href="profile.html" class="quick-action-btn">
+                        <i class="ti ti-user"></i>
+                        <span>View Profile</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <h2 class="logo">Code<span style="color:#f6d88f;">Bloom</span></h2>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-heading">ABOUT US</p>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="footerlinks/policy.html">Privacy Policy</a>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-heading">LESSONS</p>
+            <a href="courses/coursespage/htmlcourse.html">HTML</a>
+            <a href="courses/coursespage/csscourse.html">CSS</a>
+            <a href="courses/coursespage/javascriptcourse.html">JavaScript</a>
+            <a href="courses/coursespage/githubcourse.html">GitHub</a>
+            <a href="courses/coursespage/responsivedesign.html">Responsive Design</a>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-heading">USEFUL LINKS</p>
+            <a href="footerlinks/help.html">Help</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="ti ti-brand-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; CodeBloom 2026. All rights reserved.
+    </div>
+</footer>
+
+<script src="auth.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

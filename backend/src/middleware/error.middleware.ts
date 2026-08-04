@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { ZodError } from "zod";
+import multer from "multer";
 import { AppError, isAppError } from "../lib/errors";
 
 export function notFoundHandler(_req: Request, res: Response): void {
@@ -17,6 +18,15 @@ export function errorHandler(
       error: "Validation failed",
       details: error.flatten().fieldErrors,
     });
+    return;
+  }
+
+  if (error instanceof multer.MulterError) {
+    if (error.code === "LIMIT_FILE_SIZE") {
+      res.status(400).json({ error: "File too large. Maximum size is 5MB." });
+      return;
+    }
+    res.status(400).json({ error: error.message });
     return;
   }
 

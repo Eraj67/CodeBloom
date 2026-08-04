@@ -27,11 +27,25 @@ model Profile {
   updatedAt   DateTime @updatedAt
 }
 
+model Course {
+  id            String   @id
+  title         String
+  description   String
+  icon          String?
+  totalLessons  Int      @default(0)
+  order         Int      @default(0)
+  lessons       Lesson[]
+}
+
 model Lesson {
-  id       String @id
-  courseId String
-  title    String
-  order    Int
+  id          String  @id
+  courseId    String
+  title       String
+  description String?
+  content     String?
+  duration    Int     @default(15)
+  order       Int
+  course      Course  @relation(fields: [courseId], references: [id], onDelete: Cascade)
 
   @@index([courseId])
 }

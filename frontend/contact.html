@@ -25,72 +25,85 @@
         <a href="project.html">PROJECT</a>
         <a href="challenge.html">CHALLENGE</a>
         <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
+        <a href="contact.html" class="active">CONTACT</a>
     </nav>
 
 </header>
 
- <!-- Hero -->
-    <section class="section">
-        <p class="eyebrow">Contact</p>
-        <h2 class="section-title">
-            Let's Connect
-        </h2>
-        <p class="section-description">
-            Have a question, feedback, or an idea for Code Bloom?
-            I'd love to hear from you.
-        </p>
-    </section>
+<section class="contact">
 
-    <!-- Contact -->
-    <section class="section contact-layout">
-        <!-- Contact Information -->
-        <div class="contact-info">
-            <div class="card">
-                <h3><i class="ti ti-mail"></i> Email</h3>
-                <p class="section-description">
-                    hello@codebloom.dev
-                </p>
+    <div class="contact-box">
+
+        <!-- LEFT -->
+        <div class="contact-left">
+            <span class="eyebrow">CONTACT</span>
+            <h2>Let's Connect</h2>
+            <p>Questions, ideas or feedback?
+            We'd love to hear from you.</p>
+
+            <div class="email-card">
+                <div>
+                    <h4><i class="ti ti-mail"></i> Email</h4>
+                    <p>hello@codebloom.dev</p>
+                </div>
             </div>
 
-            <div class="card">
-                <h3><i class="ti ti-brand-github"></i> GitHub</h3>
-                <p class="section-description">
-                    github.com/codebloom
-                </p>
-            </div>
-
-            <div class="card">
-                <h3><i class="ti ti-brand-instagram"></i> Instagram</h3>
-                <p class="section-description">
-                    @codebloom
-                </p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
+                <a href="#" target="_blank"><i class="ti ti-brand-instagram"></i> Instagram</a>
+                <a href="#" target="_blank"><i class="ti ti-brand-x"></i></a>
             </div>
         </div>
 
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required >
-                <input type="text" placeholder="Subject" required>
-                <input type="text" name="website" tabindex="-1" autocomplete="off">
-                <textarea rows="8"placeholder="Write your message..." required></textarea>
-                <button type="submit">
-                    Send Message
-                </button>
-            </form>
-        </div>
-    </section>
+<!-- RIGHT -->
+        <div class="contact-right">
+            <form class="contact-form" id="contact-form">
 
-    <!-- Quote -->
-    <section class="section">
-        <div class="challenge-card">
-            <h2>
-                "Every great collaboration begins with a simple hello."
-            </h2>
+    <div class="input-row">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+
+    <input type="text" name="subject" placeholder="Subject" required>
+
+    <input type="text" name="website" tabindex="-1" autocomplete="off">
+
+    <textarea
+        name="message"
+        placeholder="Tell us about your question, idea, or feedback..."
+        rows="6"
+        required></textarea>
+
+    <button type="submit">
+        Send Message →
+    </button>
+
+</form>
         </div>
-    </section>
+
+    <div class="input-row">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+    </div>
+
+    <input type="text" placeholder="Subject" required>
+
+    <textarea
+        placeholder="Tell us about your question, idea, or feedback..."
+        rows="6"
+        required></textarea>
+
+    <button type="submit">
+        Send Message →
+    </button>
+
+</form>
+        </div>
+
+    </div>
+
+</section>
+
 <!-- footer -->
     <footer class="site-footer">
     <div class="footer-top">

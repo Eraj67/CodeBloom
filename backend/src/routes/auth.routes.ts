@@ -6,7 +6,11 @@ import {
   signToken,
 } from "../middleware/auth.middleware";
 import * as authService from "../services/auth.service";
-import { loginSchema, signupSchema } from "../validators/auth.validator";
+import {
+  changePasswordSchema,
+  loginSchema,
+  signupSchema,
+} from "../validators/auth.validator";
 
 const router = Router();
 
@@ -43,6 +47,16 @@ router.get("/me", requireAuth, async (req, res, next) => {
   try {
     const user = await authService.getCurrentUser(req.userId!);
     res.json({ user });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.patch("/password", requireAuth, async (req, res, next) => {
+  try {
+    const input = changePasswordSchema.parse(req.body);
+    await authService.changePassword(req.userId!, input);
+    res.json({ message: "Password updated successfully" });
   } catch (error) {
     next(error);
   }

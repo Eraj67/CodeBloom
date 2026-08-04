@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Profile - CodeBloom</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <link rel="icon" type="image/png" href="logo.png">
+</head>
+
+<body>
+
+<header class="site-header">
+    <a class="logo" href="index.html">
+        <img src="logo.png" alt="CodeBloom Logo" class="logo-img">
+        <span class="code">Code</span><span class="bloom">Bloom</span>
+    </a>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html">HOME</a>
+        <a href="courses.html">COURSES</a>
+        <a href="project.html">PROJECT</a>
+        <a href="challenge.html">CHALLENGE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="dashboard.html">DASHBOARD</a>
+    </nav>
+</header>
+
+<section class="profile-section">
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar-section">
+                <div class="avatar-wrapper">
+                    <img id="avatar-preview" src="" alt="Profile Avatar" class="profile-avatar">
+                    <div class="avatar-placeholder" id="avatar-placeholder">
+                        <i class="ti ti-user"></i>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1 id="profile-name">Loading...</h1>
+                    <p id="profile-email" class="profile-email"></p>
+                    <p id="profile-member-since" class="profile-member-since"></p>
+                </div>
+            </div>
+            <button class="btn-edit-profile" id="btn-toggle-edit">
+                <i class="ti ti-edit"></i> Edit Profile
+            </button>
+        </div>
+
+        <div class="profile-stats">
+            <div class="stat-card">
+                <i class="ti ti-book"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="stat-lessons">0</span>
+                    <span class="stat-label">Lessons Completed</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="ti ti-trophy"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="stat-challenges">0</span>
+                    <span class="stat-label">Challenges Completed</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="ti ti-calendar"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="stat-joined">-</span>
+                    <span class="stat-label">Member Since</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-bio-section">
+            <h2>About Me</h2>
+            <p id="profile-bio" class="profile-bio">No bio yet.</p>
+        </div>
+
+        <div class="profile-edit-form" id="edit-form" style="display: none;">
+            <h2>Edit Profile</h2>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="edit-name">Display Name</label>
+                    <input type="text" id="edit-name" placeholder="Your display name">
+                </div>
+                <div class="form-group">
+                    <label for="edit-bio">Bio</label>
+                    <textarea id="edit-bio" placeholder="Tell us about yourself..." maxlength="500"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="edit-avatar">Avatar</label>
+                    <div class="avatar-upload">
+                        <input type="file" id="edit-avatar" accept="image/jpeg,image/png,image/webp,image/gif">
+                        <span class="upload-hint">Max 5MB. JPG, PNG, WebP, GIF.</span>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Save Changes</button>
+                    <button type="button" class="btn-cancel" id="btn-cancel-edit">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="profile-settings-section">
+            <h2>Account Settings</h2>
+            <div class="settings-item">
+                <div class="settings-info">
+                    <h3>Change Password</h3>
+                    <p>Update your password to keep your account secure</p>
+                </div>
+                <button class="btn-settings" id="btn-toggle-password">
+                    <i class="ti ti-lock"></i> Change Password
+                </button>
+            </div>
+        </div>
+
+        <div class="password-form" id="password-form" style="display: none;">
+            <h2>Change Password</h2>
+            <form id="change-password-form">
+                <div class="form-group">
+                    <label for="current-password">Current Password</label>
+                    <input type="password" id="current-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">New Password</label>
+                    <input type="password" id="new-password" minlength="8" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm New Password</label>
+                    <input type="password" id="confirm-password" minlength="8" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Update Password</button>
+                    <button type="button" class="btn-cancel" id="btn-cancel-password">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <h2 class="logo">Code<span style="color:#f6d88f;">Bloom</span></h2>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-heading">ABOUT US</p>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="footerlinks/policy.html">Privacy Policy</a>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-heading">LESSONS</p>
+            <a href="courses/coursespage/htmlcourse.html">HTML</a>
+            <a href="courses/coursespage/csscourse.html">CSS</a>
+            <a href="courses/coursespage/javascriptcourse.html">JavaScript</a>
+            <a href="courses/coursespage/githubcourse.html">GitHub</a>
+            <a href="courses/coursespage/responsivedesign.html">Responsive Design</a>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-heading">USEFUL LINKS</p>
+            <a href="footerlinks/help.html">Help</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="ti ti-brand-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; CodeBloom 2026. All rights reserved.
+    </div>
+</footer>
+
+<script src="auth.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

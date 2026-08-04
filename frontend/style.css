@@ -592,6 +592,12 @@ body{
     color:#888;
 } 
 
+/* COntact honeypot */
+input[name="website"]{
+    position:absolute;
+    left:-9999px;
+}
+
 /* RESPONSIVENESs */
 /*
    RESPONSIVE - TABLETS (max-width: 1024px)

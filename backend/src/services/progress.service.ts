@@ -29,7 +29,7 @@ export async function listProgress(userId: string) {
   });
 }
 
-export async function getProgressSummary(userId: string) {
+export async function getCompletionStats(userId: string) {
   const completedLessons = await prisma.userProgress.findMany({
     where: { userId, itemType: ProgressItemType.lesson },
     select: { itemId: true },
@@ -43,9 +43,9 @@ export async function getProgressSummary(userId: string) {
       })
     : [];
 
-  const byCourse: Record<string, number> = {};
+  const lessonsByCourse: Record<string, number> = {};
   for (const lesson of lessons) {
-    byCourse[lesson.courseId] = (byCourse[lesson.courseId] ?? 0) + 1;
+    lessonsByCourse[lesson.courseId] = (lessonsByCourse[lesson.courseId] ?? 0) + 1;
   }
 
   const completedChallenges = await prisma.userProgress.count({
@@ -53,10 +53,14 @@ export async function getProgressSummary(userId: string) {
   });
 
   return {
-    lessonsByCourse: byCourse,
+    lessonsByCourse,
     completedChallenges,
     totalCompletedLessons: completedLessons.length,
   };
+}
+
+export async function getProgressSummary(userId: string) {
+  return getCompletionStats(userId);
 }
 
 export async function completeItem(

@@ -10,9 +10,6 @@ export async function listCourses() {
       description: true,
       icon: true,
       totalLessons: true,
-      _count: {
-        select: { lessons: true },
-      },
     },
   });
 }

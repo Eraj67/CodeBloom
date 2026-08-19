@@ -24,7 +24,9 @@ const fileFilter = (_req: Express.Request, file: Express.Multer.File, cb: multer
   if (allowedTypes.includes(file.mimetype)) {
     cb(null, true);
   } else {
-    cb(new Error("Invalid file type. Only JPEG, PNG, WebP, and GIF are allowed."));
+    const error = new multer.MulterError("LIMIT_UNEXPECTED_FILE", "avatar");
+    error.message = "Invalid file type. Only JPEG, PNG, WebP, and GIF are allowed.";
+    cb(error);
   }
 };
 

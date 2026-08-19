@@ -153,7 +153,6 @@ async function main() {
         lessons: {
           create: lessons.map((lesson) => ({
             ...lesson,
-            courseId: course.id,
           })),
         },
       },

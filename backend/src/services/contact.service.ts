@@ -43,7 +43,11 @@ export async function submitContact(input: ContactInput) {
 
   const message = await prisma.contactMessage.create({ data: sanitized });
 
-  await sendContactEmail(sanitized);
+  try {
+    await sendContactEmail(sanitized);
+  } catch (error) {
+    console.error("[contact] Message saved but email failed to send:", error);
+  }
 
   return {
     id: message.id,

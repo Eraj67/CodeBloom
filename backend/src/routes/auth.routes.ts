@@ -1,4 +1,5 @@
 import { Router } from "express";
+import rateLimit from "express-rate-limit";
 import {
   clearAuthCookie,
   requireAuth,
@@ -14,11 +15,19 @@ import {
 
 const router = Router();
 
-router.post("/signup", async (req, res, next) => {
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: "Too many requests. Please try again later." },
+});
+
+router.post("/signup", authLimiter, async (req, res, next) => {
   try {
     const input = signupSchema.parse(req.body);
     const user = await authService.signup(input);
-    const token = signToken(user.id);
+    const token = await signToken(user.id);
     setAuthCookie(res, token);
     res.status(201).json({ user });
   } catch (error) {
@@ -26,11 +35,11 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-router.post("/login", async (req, res, next) => {
+router.post("/login", authLimiter, async (req, res, next) => {
   try {
     const input = loginSchema.parse(req.body);
     const user = await authService.login(input);
-    const token = signToken(user.id);
+    const token = await signToken(user.id);
     setAuthCookie(res, token);
     res.json({ user });
   } catch (error) {
@@ -52,7 +61,7 @@ router.get("/me", requireAuth, async (req, res, next) => {
   }
 });
 
-router.patch("/password", requireAuth, async (req, res, next) => {
+router.patch("/password", requireAuth, authLimiter, async (req, res, next) => {
   try {
     const input = changePasswordSchema.parse(req.body);
     await authService.changePassword(req.userId!, input);

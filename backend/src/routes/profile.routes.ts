@@ -43,7 +43,8 @@ router.post(
       if (!req.file) {
         return res.status(400).json({ error: "No file uploaded" });
       }
-      const profile = await profileService.uploadAvatar(req.userId!, req.file);
+      const origin = `${req.protocol}://${req.get("host")}`;
+      const profile = await profileService.uploadAvatar(req.userId!, req.file, origin);
       res.json({ profile });
     } catch (error) {
       next(error);

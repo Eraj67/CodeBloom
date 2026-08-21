@@ -1,0 +1,9 @@
+{
+  "tool": "vitest",
+  "gate": null,
+  "additionalTools": ["supertest", "@types/supertest"],
+  "e2eTool": "none",
+  "testDir": "backend/tests",
+  "filePattern": "*.test.ts",
+  "packageManager": "npm"
+}

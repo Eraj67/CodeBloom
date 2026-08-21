@@ -24,7 +24,8 @@ const userSelect = {
 } as const;
 
 export async function signup(input: SignupInput) {
-  const existing = await prisma.user.findUnique({ where: { email: input.email } });
+  const email = input.email.trim().toLowerCase();
+  const existing = await prisma.user.findUnique({ where: { email } });
 
   if (existing) {
     throw new AppError(409, "Email already registered");
@@ -35,7 +36,7 @@ export async function signup(input: SignupInput) {
   const user = await prisma.$transaction(async (tx) => {
     const created = await tx.user.create({
       data: {
-        email: input.email,
+        email,
         passwordHash,
         profile: {
           create: {
@@ -53,8 +54,9 @@ export async function signup(input: SignupInput) {
 }
 
 export async function login(input: LoginInput) {
+  const email = input.email.trim().toLowerCase();
   const user = await prisma.user.findUnique({
-    where: { email: input.email },
+    where: { email },
     select: { ...userSelect, passwordHash: true },
   });
 
@@ -105,6 +107,6 @@ export async function changePassword(userId: string, input: ChangePasswordInput)
 
   await prisma.user.update({
     where: { id: userId },
-    data: { passwordHash: newPasswordHash },
+    data: { passwordHash: newPasswordHash, tokenVersion: { increment: 1 } },
   });
 }

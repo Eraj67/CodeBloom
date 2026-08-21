@@ -12,19 +12,19 @@ router.get("/", async (_req, res, next) => {
   }
 });
 
-router.get("/:courseId", async (req, res, next) => {
+router.get("/lessons/:lessonId", async (req, res, next) => {
   try {
-    const course = await courseService.getCourse(req.params.courseId);
-    res.json({ course });
+    const lesson = await courseService.getLesson(req.params.lessonId);
+    res.json({ lesson });
   } catch (error) {
     next(error);
   }
 });
 
-router.get("/lessons/:lessonId", async (req, res, next) => {
+router.get("/:courseId", async (req, res, next) => {
   try {
-    const lesson = await courseService.getLesson(req.params.lessonId);
-    res.json({ lesson });
+    const course = await courseService.getCourse(req.params.courseId);
+    res.json({ course });
   } catch (error) {
     next(error);
   }

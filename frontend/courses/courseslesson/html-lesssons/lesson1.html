@@ -1,1 +1,463 @@
-<!-- Welcome -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1: Introduction to HTML — CodeBloom</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+  <link rel="icon" type="image/png" href="../../../logo.png">
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="stylesheet" href="../../../lessons/lessons.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="../../../index.html">
+        <img src="../../../logo.png" alt="CodeBloom Logo" class="logo-img">
+        <span class="code">Code</span><span class="bloom">Bloom</span>
+    </a>
+
+    <nav class="navbar">
+        <a href="../../../index.html">HOME</a>
+        <a href="../../../courses.html" class="active">COURSES</a>
+        <a href="../../../project.html">PROJECT</a>
+        <a href="../../../challenge.html">CHALLENGE</a>
+        <a href="../../../about.html">ABOUT</a>
+        <a href="../../../contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <main class="lesson-shell">
+    <p class="lesson-breadcrumb">
+      <a href="../../../courses.html">Courses</a> ›
+      <a href="../htmlcourse.html">HTML</a> ›
+      <span>Lesson 1</span>
+    </p>
+
+    <span class="lesson-number">Lesson 1 of 12</span>
+    <h1>Introduction to HTML</h1>
+    <p class="lesson-prereq"><strong>Prerequisites:</strong> None</p>
+
+    <section class="lesson-step" id="goal">
+      <h2> What you'll learn</h2>
+      <p>By the end of this lesson, you should be able to:</p>
+      <ul>
+        <li>Explain what HTML is.</li>
+        <li>Understand what HTML is used for.</li>
+        <li>Recognize an HTML element.</li>
+        <li>Create a simple HTML page.</li>
+        <li>Write basic HTML headings and paragraphs.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-step" id="what-is-html">
+      <h2>1. What is HTML?</h2>
+      <p>When you visit a website, you see things like:</p>
+      <ul>
+        <li>Headings</li>
+        <li>Paragraphs</li>
+        <li>Images</li>
+        <li>Buttons</li>
+        <li>Links</li>
+        <li>Lists</li>
+      </ul>
+      <p>But how does the browser know what each piece of content is?</p>
+      <p>That's where HTML comes in.</p>
+      <p>HTML stands for HyperText Markup Language.</p>
+      <p>HTML is used to structure the content of a web page.</p>
+      <p>Think of building a house:</p>
+      <p> HTML = structure<br> CSS = appearance<br> JavaScript = behavior</p>
+      <p>For example, HTML can tell the browser:</p>
+      <blockquote>"This is the main heading."</blockquote>
+      <p>or</p>
+      <blockquote>"This is a paragraph."</blockquote>
+      <p>or</p>
+      <blockquote>"This is a link."</blockquote>
+    </section>
+
+    <section class="lesson-step" id="first-html">
+      <h2> 2. Your first HTML</h2>
+      <p>Here's a simple HTML example:</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">html</div>
+        <pre><code>&lt;h1&gt;Hello, world!&lt;/h1&gt;
+&lt;p&gt;Welcome to CodeBloom.&lt;/p&gt;</code></pre>
+      </div>
+      <p>When the browser reads this, it understands:</p>
+      <ul>
+        <li><code>&lt;h1&gt;</code> → this is a heading</li>
+        <li><code>&lt;p&gt;</code> → this is a paragraph</li>
+      </ul>
+      <p>So the browser displays:</p>
+      <div class="lesson-callout">
+        <span class="lesson-callout-label">Rendered output</span>
+        <p><strong>Hello, world!</strong><br>Welcome to CodeBloom.</p>
+      </div>
+    </section>
+
+    <section class="lesson-step" id="elements">
+      <h2> 3. Understanding HTML elements</h2>
+      <p>Look at this:</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">html</div>
+        <pre><code>&lt;p&gt;Hello!&lt;/p&gt;</code></pre>
+      </div>
+      <p>This is an HTML element.</p>
+      <p>It has three main parts:</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">structure</div>
+        <pre><code>&lt;p&gt;       Hello!       &lt;/p&gt;
+ ↑           ↑            ↑
+Opening    Content      Closing
+ tag                    tag</code></pre>
+      </div>
+      <p>The opening tag tells the browser where the element starts.</p>
+      <p>The closing tag tells the browser where it ends.</p>
+      <p>Try this:</p>
+      <p>Change the text inside the paragraph.</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">html</div>
+        <pre><code>&lt;p&gt;I am learning HTML.&lt;/p&gt;</code></pre>
+      </div>
+      <p>What happens?</p>
+      <p>Run the code and see for yourself.</p>
+    </section>
+
+    <section class="lesson-step" id="spot-the-bug">
+      <h2>Spot the bug</h2>
+      <p>Here's some HTML with a mistake in it:</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">html</div>
+        <pre><code>&lt;p&gt;I am learning HTML.</code></pre>
+      </div>
+      <p>What's missing here that would cause problems? Think about it before revealing the answer.</p>
+      <button class="bug-reveal-btn" data-target="bug-answer-1">Reveal what's wrong</button>
+      <p class="bug-answer" id="bug-answer-1" hidden>
+        The closing tag <code>&lt;/p&gt;</code> is missing. Without it, the
+        browser doesn't know where this paragraph is supposed to end - so
+        it guesses, usually by treating everything after it as still
+        part of the same paragraph until something forces a break. On a
+        real page with more content below, this can quietly break your
+        layout in ways that are confusing to track down, because the
+        actual mistake is way earlier than where the page starts looking
+        wrong.
+      </p>
+    </section>
+
+    <section class="lesson-step" id="try-it-1">
+      <h2> Try It</h2>
+      <p><strong>Goal:</strong> Change the paragraph so it introduces you.</p>
+      <p>Starting code:</p>
+
+      <div class="sandbox" data-mode="html" data-sandbox-id="sandbox-1">
+        <div class="sandbox-editor">
+          <textarea id="sandbox-1-code" class="sandbox-code">&lt;p&gt;My name is Alex.&lt;/p&gt;</textarea>
+          <button class="sandbox-run-btn" data-target="sandbox-1">▶ Run</button>
+        </div>
+        <div class="sandbox-output">
+          <p class="sandbox-output-label">Preview</p>
+          <iframe id="sandbox-1-output" class="sandbox-frame" title="HTML output preview"></iframe>
+        </div>
+      </div>
+
+      <p>Change it to your own name.</p>
+      <div class="lesson-callout">
+        <span class="lesson-callout-label"> Hint</span>
+        <p>You only need to change the text between <code>&lt;p&gt;</code> and <code>&lt;/p&gt;</code></p>
+      </div>
+    </section>
+
+    <section class="lesson-step" id="page-structure">
+      <h2> 4. Your first HTML page</h2>
+      <p>An HTML document normally has a basic structure like this:</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">html</div>
+        <pre><code>&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My First Page&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+    &lt;p&gt;I am learning HTML.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+      <p>Don't worry if this looks like a lot.</p>
+      <p>Let's break it down.</p>
+
+      <p><code>&lt;!DOCTYPE html&gt;</code></p>
+      <p>This tells the browser that the document is HTML.</p>
+
+      <p><code>&lt;html&gt;</code></p>
+      <p>This is the root element that contains the page.</p>
+
+      <p><code>&lt;head&gt;</code></p>
+      <p>Contains information about the page that isn't normally displayed as the main page content.</p>
+
+      <p><code>&lt;title&gt;</code></p>
+      <p>Sets the title shown in the browser tab.</p>
+
+      <p><code>&lt;body&gt;</code></p>
+      <p>Contains the content that appears on the page.</p>
+
+      <p>This basic document structure is part of the standard beginner foundation for HTML.</p>
+
+      <div class="lesson-callout">
+        <span class="lesson-callout-label">🔗 You'll use this when...</span>
+        <p>
+          This exact <code>&lt;!DOCTYPE html&gt;</code> / <code>&lt;html&gt;</code>
+          / <code>&lt;head&gt;</code> / <code>&lt;body&gt;</code> skeleton is
+          the starting point for every single page you'll ever build on
+          CodeBloom - including your final project. You're not just
+          learning a lesson example, you're learning the thing you'll
+          type first, every time, from here on.
+        </p>
+      </div>
+    </section>
+
+    <section class="lesson-step" id="headings">
+      <h2>5. Headings</h2>
+      <p>HTML gives you six levels of headings:</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">html</div>
+        <pre><code>&lt;h1&gt;Main heading&lt;/h1&gt;
+&lt;h2&gt;Second-level heading&lt;/h2&gt;
+&lt;h3&gt;Third-level heading&lt;/h3&gt;
+&lt;h4&gt;Fourth-level heading&lt;/h4&gt;
+&lt;h5&gt;Fifth-level heading&lt;/h5&gt;
+&lt;h6&gt;Sixth-level heading&lt;/h6&gt;</code></pre>
+      </div>
+      <p>The most important heading is usually <code>&lt;h1&gt;</code>.</p>
+      <p>Think of headings like the structure of a book:</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">structure</div>
+        <pre><code>&lt;h1&gt;My Website
+    &lt;h2&gt;About Me
+    &lt;h2&gt;My Projects
+        &lt;h3&gt;Project One
+        &lt;h3&gt;Project Two</code></pre>
+      </div>
+    </section>
+
+    <section class="lesson-step" id="paragraphs">
+      <h2> 6. Paragraphs</h2>
+      <p>Use <code>&lt;p&gt;</code> for paragraphs.</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">html</div>
+        <pre><code>&lt;p&gt;
+  HTML is used to structure content on the web.
+&lt;/p&gt;</code></pre>
+      </div>
+      <p>You can have multiple paragraphs:</p>
+      <div class="lesson-codeblock">
+        <div class="lesson-codeblock-bar">html</div>
+        <pre><code>&lt;p&gt;I am learning HTML.&lt;/p&gt;
+
+&lt;p&gt;HTML is the foundation of web development.&lt;/p&gt;</code></pre>
+      </div>
+    </section>
+
+    <section class="lesson-step" id="your-turn">
+      <h2> Your Turn</h2>
+      <p>Create a simple introduction page.</p>
+      <p>Your page should contain:</p>
+      <ol>
+        <li>An <code>&lt;h1&gt;</code> containing your name.</li>
+        <li>A paragraph introducing yourself.</li>
+        <li>Another <code>&lt;h2&gt;</code> saying "My Goal".</li>
+        <li>A paragraph explaining what you want to learn.</li>
+      </ol>
+
+      <p><strong>Example</strong></p>
+
+      <div class="sandbox" data-mode="html" data-sandbox-id="sandbox-2">
+        <div class="sandbox-editor">
+          <textarea id="sandbox-2-code" class="sandbox-code">&lt;h1&gt;Alex&lt;/h1&gt;
+
+&lt;p&gt;I am learning web development.&lt;/p&gt;
+
+&lt;h2&gt;My Goal&lt;/h2&gt;
+
+&lt;p&gt;I want to become a great developer.&lt;/p&gt;</textarea>
+          <button class="sandbox-run-btn" data-target="sandbox-2">▶ Run</button>
+        </div>
+        <div class="sandbox-output">
+          <p class="sandbox-output-label">Preview</p>
+          <iframe id="sandbox-2-output" class="sandbox-frame" title="HTML output preview"></iframe>
+        </div>
+      </div>
+
+      <p>Don't copy the example. Make it yours.</p>
+    </section>
+
+    <section class="lesson-step" id="quiz">
+      <h2> Check Your Understanding</h2>
+
+      <div class="quiz-question" data-quiz-id="q1" data-answer="a">
+        <p class="quiz-prompt">Question 1: What does HTML stand for?</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="a">HyperText Markup Language</button>
+          <button class="quiz-option" data-value="b">HighText Machine Language</button>
+          <button class="quiz-option" data-value="c">Hyperlink Text Management Language</button>
+          <button class="quiz-option" data-value="d">Home Tool Markup Language</button>
+        </div>
+        <button class="quiz-reveal-btn">Reveal answer</button>
+        <p class="quiz-explanation" hidden>Answer: A — HyperText Markup Language.</p>
+      </div>
+
+      <div class="quiz-question" data-quiz-id="q2" data-answer="c">
+        <p class="quiz-prompt">Question 2: Which element is used for a paragraph?</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="a">&lt;heading&gt;</button>
+          <button class="quiz-option" data-value="b">&lt;text&gt;</button>
+          <button class="quiz-option" data-value="c">&lt;p&gt;</button>
+          <button class="quiz-option" data-value="d">&lt;paragraph&gt;</button>
+        </div>
+        <button class="quiz-reveal-btn">Reveal answer</button>
+        <p class="quiz-explanation" hidden>Answer: C - &lt;p&gt;</p>
+      </div>
+
+      <div class="quiz-question" data-quiz-id="q3" data-answer="c">
+        <p class="quiz-prompt">Question 3: Which part of this is the closing tag? <code>&lt;h1&gt;Hello&lt;/h1&gt;</code></p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="a">&lt;h1&gt;</button>
+          <button class="quiz-option" data-value="b">Hello</button>
+          <button class="quiz-option" data-value="c">&lt;/h1&gt;</button>
+          <button class="quiz-option" data-value="d">h1</button>
+        </div>
+        <button class="quiz-reveal-btn">Reveal answer</button>
+        <p class="quiz-explanation" hidden>Answer: C - &lt;/h1&gt;</p>
+      </div>
+
+      <div class="quiz-question" data-quiz-id="q4" data-answer="b">
+        <p class="quiz-prompt">Question 4: Where does visible page content normally go?</p>
+        <div class="quiz-options">
+          <button class="quiz-option" data-value="a">&lt;head&gt;</button>
+          <button class="quiz-option" data-value="b">&lt;body&gt;</button>
+          <button class="quiz-option" data-value="c">&lt;title&gt;</button>
+          <button class="quiz-option" data-value="d">&lt;html&gt;</button>
+        </div>
+        <button class="quiz-reveal-btn">Reveal answer</button>
+        <p class="quiz-explanation" hidden>Answer: B - &lt;body&gt;</p>
+      </div>
+    </section>
+
+    <section class="lesson-step" id="explain-it-back">
+      <h2>Explain it in your own words</h2>
+      <p>
+        Not graded, nobody checks this - it's just for you. In a sentence
+        or two, explain what HTML actually is and what job it does, like
+        you were explaining it to a friend who's never heard of it.
+      </p>
+      <textarea class="reflect-textarea" placeholder="Type your explanation here..." rows="3"></textarea>
+    </section>
+
+    <section class="lesson-step" id="confidence-check">
+      <h2>How confident do you feel with this?</h2>
+      <p>Be honest — this just helps you notice what to revisit later.</p>
+      <div class="confidence-group">
+        <button class="confidence-btn" data-value="low">Not really</button>
+        <button class="confidence-btn" data-value="mid">Somewhat</button>
+        <button class="confidence-btn" data-value="high">Very confident</button>
+      </div>
+    </section>
+
+    <section class="lesson-step" id="mini-challenge">
+      <h2>Mini Challenge</h2>
+      <p>You've learned enough to build something small.</p>
+      <p>Build a "My Developer Profile" page.</p>
+      <p>Your page must contain:</p>
+      <ul>
+        <li>Your name as an <code>&lt;h1&gt;</code></li>
+        <li>A short introduction using <code>&lt;p&gt;</code></li>
+        <li>An <code>&lt;h2&gt;</code> called "My Skills"</li>
+        <li>A paragraph describing the skills you're learning</li>
+        <li>An <code>&lt;h2&gt;</code> called "My Goal"</li>
+        <li>A paragraph describing your goal</li>
+      </ul>
+      <p>Don't look at the solution immediately.</p>
+      <p>Try it yourself first.</p>
+    </section>
+
+    <div class="lesson-recap">
+      <h2>What you learned</h2>
+      <p>You now know:</p>
+      <ul>
+        <li>HTML structures web content.</li>
+        <li>An element is a piece of HTML, such as <code>&lt;p&gt;Hello&lt;/p&gt;</code></li>
+        <li>Opening tag: <code>&lt;p&gt;</code></li>
+        <li>Content: Hello</li>
+        <li>Closing tag: <code>&lt;/p&gt;</code></li>
+      </ul>
+      <p>You also created your first basic HTML page and used headings and paragraphs.</p>
+    </div>
+
+    <section class="lesson-step" id="next">
+      <h2>What's next?</h2>
+      <p>In the next lesson, you'll go deeper into HTML Tags and learn how to give elements additional information.</p>
+    </section>
+
+    <div class="lesson-progress">
+      <input type="checkbox" class="lesson-check" data-lesson="html-1" id="lessonComplete">
+      <label for="lessonComplete">Mark this lesson as complete</label>
+    </div>
+
+    <nav class="lesson-prevnext">
+      <span></span>
+      <a href="htmllessons2.html" class="lesson-prevnext-link">
+        <span class="lesson-prevnext-label">Next</span>
+        <span>Lesson 2: Basic Tags</span>
+      </a>
+    </nav>
+  </main>
+
+
+    <!-- footer -->
+    <footer class="site-footer">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <h2 class="logo">Code<span style="color:#f6d88f;">Bloom</span></h2>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-heading">ABOUT US</p>
+            <a href="../../../about.html">About Us</a>
+            <a href="../../../contact.html">Contact Us</a>
+            <a href="../../../footerlinks/policy.html">Privacy Policy</a>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-heading">LESSONS</p>
+            <a href="../../coursespage/htmlcourse.html">HTML</a>
+            <a href="../../coursespage/csscourse.html">CSS</a>
+            <a href="../../coursespage/javascriptcourse.html">JavaScript</a>
+            <a href="../../coursespage/githubcourse.html">GitHub</a>
+            <a href="../../coursespage/responsivedesign.html">Responsive Design</a>
+        </div>
+
+        <div class="footer-col">
+            <p class="footer-heading">USEFUL LINKS</p>
+            <a href="../../../footerlinks/help.html">Help</a>
+        </div>
+
+        <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="ti ti-brand-twitter"></i></a>
+            <a href="#" aria-label="Tiktok"><i class="ti ti-brand-tiktok"></i></a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; CodeBloom 2026. All rights reserved.
+    </div>
+</footer>
+
+  <script src="../../../progress.js"></script>
+  <script src="../../../lessons/sandbox.js"></script>
+  <script src="../../../lessons/interactions.js"></script>
+  <script src="../../../lessons/quiz.js"></script>
+</body>
+</html>

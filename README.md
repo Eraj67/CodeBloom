@@ -1,74 +1,213 @@
-🌸 CodeBloom
+<div align="center">
 
-Learn. Practice. Build. Grow.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:C9A227&height=200&section=header&text=CodeBloom&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Learn.%20Practice.%20Build.%20Grow.&descAlignY=60&descSize=20" width="100%"/>
 
-CodeBloom is an open-source web development learning platform built to help beginners learn programming through structured lessons, hands-on coding challenges, 
-And real-world projects.
-This project is being developed as a real-world passion project with the goal of making coding education simple, practical, and accessible for everyone.
+<br>
 
-🚀 Vision
-Most beginners struggle because they watch tutorials without building real projects.
-CodeBloom aims to solve that by providing a complete learning journey where students can:
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=1000&color=C9A227&center=true&vCenter=true&width=700&lines=Learn.+Practice.+Build.+Grow.;A+learning+platform+for+future+developers.;Turn+knowledge+into+real+projects." alt="Typing SVG" />
 
-📚 Learn concepts step by step
-💻 Practice with coding challenges
-🚀 Build real-world projects
-🌱 Track their progress
-🤝 Learn together as a community
-✨ Current Features
+<br><br>
 
-📚 Planned Features
-HTML Course
-CSS Course
-JavaScript Course
-Git & GitHub Course
-Interactive lesson pages
-Daily coding challenges
-Beginner to Advanced projects
-Student progress tracking
-Quizzes
-Certificates
-Search functionality
-User accounts
-Community features
-Leaderboards
-Dark/Light mode
+[![Status](https://img.shields.io/badge/status-under--development-C9A227?style=for-the-badge)](https://github.com/Eraj67/CodeBloom)
+[![GitHub](https://img.shields.io/badge/GitHub-CodeBloom-181717?style=for-the-badge\&logo=github)](https://github.com/Eraj67/CodeBloom)
+[![Instagram](https://img.shields.io/badge/Instagram-codebloom.learn-E4405F?style=for-the-badge\&logo=instagram\&logoColor=white)](https://www.instagram.com/codebloom.learn/)
+[![X](https://img.shields.io/badge/X-@CodeBloomlearn-000000?style=for-the-badge\&logo=x\&logoColor=white)](https://x.com/CodeBloomlearn)
 
-🎯 Project Goal
-The long-term goal of CodeBloom is to become a free platform where students can learn modern web development through practical experience rather than passive learning.
-Instead of only reading tutorials, learners will complete challenges, build projects, and gain real-world skills.
+</div>
 
-🤝 Contributing
-Contributions are welcome!
-Whether you're a beginner or an experienced developer, you can help improve CodeBloom by:
+---
 
-Fixing bugs
-Improving the UI/UX
-Writing documentation
-Creating lessons
-Adding projects
-Building new features
-Improving accessibility
-Optimizing performance
+## About
 
-Feel free to fork the repository and submit a pull request.
+**CodeBloom** is a learning platform designed to help beginners move from learning programming concepts to actually building with them.
 
-🌟 Why This Project?
-CodeBloom isn't just another tutorial website.
-It is a real-world project created to improve both the learning experience for future students and the development skills of its contributors.
-Every feature is built with the goal of making programming education more engaging, practical, and accessible.
+The platform combines structured learning with hands-on practice, giving learners a place to explore concepts, work through lessons, and apply their knowledge through coding challenges.
 
-👥 Contributors
-This project is built through collaboration between passionate developers.
+```text
+Learn → Practice → Build → Grow
+```
 
-  Contributor 
-Eraj | Project Lead, Founder & Frontend Developer 
-Noor | Backend Developer 
-Jason | Frontend Developer 
+> **Become better than yesterday.**
 
-💙 Support
-If you like this project, consider giving it a ⭐ on GitHub.
-Your support helps motivate future development and encourages more open-source contributions.
+---
 
+## What We're Building
 
-Made with ❤️
+CodeBloom is focused on creating a practical learning experience rather than simply presenting tutorials.
+
+### Courses
+
+Structured learning paths designed around specific programming concepts and skills.
+
+### Lessons
+
+Focused learning units that break larger topics into manageable concepts.
+
+### Challenges
+
+Hands-on coding tasks that encourage learners to apply what they have learned.
+
+### Progress
+
+A foundation for tracking learning and helping users understand their development over time.
+
+---
+
+## Challenges
+
+The **Challenges** system is built around one idea:
+
+> **Learning becomes valuable when you can use it.**
+
+Each challenge can provide:
+
+```text
+┌─────────────────────────────────┐
+│  Challenge                      │
+├─────────────────────────────────┤
+│  Description                    │
+│  Requirements                   │
+│  Starter Code                   │
+│  Expected Output                │
+│  Hints                          │
+│  Solution                       │
+└─────────────────────────────────┘
+```
+
+Current challenge concepts include:
+
+* HTML fundamentals
+* CSS layouts
+* Responsive design
+* JavaScript fundamentals
+* DOM manipulation
+* Forms
+* CSS Grid
+* APIs
+* Animations
+* Project-based tasks
+
+---
+
+## Core Features
+
+```text
+✓ Course-based learning
+✓ Lesson management
+✓ Course search
+✓ Categories
+✓ Difficulty levels
+✓ Learning time
+✓ Interactive coding challenges
+✓ Starter code & expected output
+✓ Hints & solutions
+✓ Learning progress
+✓ User profiles
+```
+
+> Features are actively being developed and may change as the platform evolves.
+
+---
+
+## Project Structure
+
+CodeBloom is organized around a separate learning experience and backend system, allowing the platform to grow as new features are introduced.
+
+```text
+CodeBloom/
+│
+├── frontend/
+│   ├── pages/
+│   ├── styles/
+│   ├── scripts/
+│   └── assets/
+│
+├── backend/
+│   ├── routes/
+│   ├── controllers/
+│   └── ...
+│
+└── README.md
+```
+
+*Project structure may change during development.*
+
+---
+
+## Development
+
+CodeBloom is being developed incrementally, with features being designed, implemented, tested, and refined throughout the process.
+
+The project is currently focused on building the foundation for:
+
+```text
+Courses
+   ↓
+Lessons
+   ↓
+Practice
+   ↓
+Challenges
+   ↓
+Progress
+```
+
+---
+
+## Team
+
+### Eraj Fatima
+
+**Founder · Developer**
+
+Founder of CodeBloom, working across product development, implementation, ideas, and project direction.
+
+### Jason
+
+**Frontend Developer**
+
+Focused on building and refining the frontend experience and user interface.
+
+### Mahnoor Zaffar
+
+**Backend Developer**
+
+Focused on backend development and server-side functionality.
+
+---
+
+## Project Status
+
+<div align="center">
+
+### `UNDER DEVELOPMENT`
+
+CodeBloom is actively being built.
+
+New features, improvements, and refinements are continuously being added as the platform develops.
+
+</div>
+
+---
+
+## Connect
+
+<div align="center">
+
+**Instagram**
+
+[@codebloom.learn](https://www.instagram.com/codebloom.learn/)
+
+**X**
+
+[@CodeBloomlearn](https://x.com/CodeBloomlearn)
+
+**GitHub**
+
+[github.com/Eraj67/CodeBloom](https://github.com/Eraj67/CodeBloom)
+
+<br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:C9A227,100:000000&height=120&section=footer" width="100%"/>
+
+</div>

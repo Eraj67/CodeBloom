@@ -1,4 +1,4 @@
-/* AUTH PAGE (login/signup) */
+    /* AUTH PAGE (login/signup) */
 
 .auth-wrap{
     min-height:calc(100vh - 200px);
@@ -128,10 +128,7 @@
     color:#f6d88f;
 }
 
-<<<<<<< HEAD
-#signup-form-side{ 
-    display:none;
-=======
+
 #signup-form-side{
     opacity:0;
     pointer-events:none;
@@ -149,7 +146,11 @@
 .auth-card.signup-mode #signup-form-side{
     opacity:1;
     pointer-events:auto;
->>>>>>> ace965d1ab8caa0cdd220f760dd03cd0b4614581
+}
+/* form honey pot *
+input[name="website"]{
+    position:absolute;
+    left:-9999px;
 }
 
 /* TABLET - keep side-by-side but tighten spacing */

@@ -6,11 +6,54 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="ui-improvements.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
         <link rel="icon" type="image/png" href="logo.png">
     </head>
 
     <body>
+
+<!-- CodeBloom icon: this block once on every page that uses the icons -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-html" viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="32" rx="8" fill="currentColor" fill-opacity=".16"/>
+<path d="M5 17h38"/><path d="M19 24l-5 5 5 5"/><path d="M29 24l5 5-5 5"/><path d="M26.5 22.5l-3 13"/></symbol>
+<symbol id="i-css" viewBox="0 0 48 48"><path d="M18 8c-4 0-6 2-6 6v5c0 3-1.5 5-4.5 5 3 0 4.5 2 4.5 5v5c0 4 2 6 6 6"/>
+<path d="M30 8c4 0 6 2 6 6v5c0 3 1.5 5 4.5 5-3 0-4.5 2-4.5 5v5c0 4-2 6-6 6"/>
+<circle cx="24" cy="24" r="5" fill="currentColor" fill-opacity=".16"/><circle cx="24" cy="24" r="1.2" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-javascript" viewBox="0 0 48 48"><rect x="5" y="5" width="38" height="38" rx="10" fill="currentColor" fill-opacity=".16"/>
+<path d="M20 15v13c0 3-2 5-5 5s-5-1.5-5-4"/>
+<path d="M38 18c-.8-2-2.6-3-5-3-3 0-5 1.6-5 4s2 3.4 5 4.2S38 24.6 38 28.6 36 33 33 33s-4.6-1.2-5.4-3.2"/></symbol>
+<symbol id="i-projects" viewBox="0 0 48 48"><path d="M6 14a3 3 0 0 1 3-3h9l4 5h17a3 3 0 0 1 3 3v17a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3Z" fill="currentColor" fill-opacity=".16"/>
+<path d="M24 35V27"/><path d="M24 29c0-4-3-6.5-7.5-6.5 0 4 3 6.5 7.5 6.5Z"/><path d="M24 27c0-3.5 2.5-5.5 6.5-5.5 0 3.5-2.5 5.5-6.5 5.5Z"/></symbol>
+<symbol id="i-courses" viewBox="0 0 48 48"><path d="M24 14c-4-3-10-4-17-3v25c7-1 13 0 17 3 4-3 10-4 17-3V11c-7-1-13 0-17 3Z" fill="currentColor" fill-opacity=".16"/>
+<path d="M24 14v25"/></symbol>
+<symbol id="i-profile" viewBox="0 0 48 48"><circle cx="24" cy="16" r="8" fill="currentColor" fill-opacity=".16"/>
+<path d="M8 41c0-9 7-14 16-14s16 5 16 14"/></symbol>
+<symbol id="i-share" viewBox="0 0 48 48"><circle cx="11" cy="24" r="5" fill="currentColor" fill-opacity=".16"/><circle cx="36" cy="11" r="5" fill="currentColor" fill-opacity=".16"/><circle cx="36" cy="37" r="5" fill="currentColor" fill-opacity=".16"/>
+<path d="M15.5 21.5l16-8.5"/><path d="M15.5 26.5l16 8.5"/></symbol>
+<symbol id="i-challenge" viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="33" rx="7" fill="currentColor" fill-opacity=".16"/>
+<path d="M6 19h36"/><path d="M16 5v8"/><path d="M32 5v8"/>
+<path d="M26.5 23.5 19 32h5l-1.5 7 8-9.5h-5Z"/></symbol>
+<symbol id="i-leaderboard" viewBox="0 0 48 48"><rect x="5" y="29" width="12" height="13" rx="2.5"/>
+<rect x="18" y="20" width="12" height="22" rx="2.5" fill="currentColor" fill-opacity=".16"/>
+<rect x="31" y="26" width="12" height="16" rx="2.5"/>
+<path d="M24 5l1.9 3.8 4.1.6-3 2.9.7 4.1-3.7-2-3.7 2 .7-4.1-3-2.9 4.1-.6Z"/></symbol>
+<symbol id="i-streak" viewBox="0 0 48 48"><path d="M24 5c.6 8 11 12 11 23a11 11 0 0 1-22 0c0-5 2-8 5-10 0 3 1.2 5 3.2 6C20 17 21.5 10 24 5Z" fill="currentColor" fill-opacity=".16"/>
+<path d="M24 40a4.5 4.5 0 0 1-4.5-4.5c0-3 2-4.5 4.5-7.5 2.5 3 4.5 4.5 4.5 7.5A4.5 4.5 0 0 1 24 40Z"/></symbol>
+<symbol id="i-badge" viewBox="0 0 48 48"><path d="M15 5l6 13"/><path d="M33 5l-6 13"/>
+<circle cx="24" cy="29" r="12" fill="currentColor" fill-opacity=".16"/>
+<path d="M24 22.5l2.1 4.2 4.6.7-3.3 3.2.8 4.6-4.2-2.2-4.2 2.2.8-4.6-3.3-3.2 4.6-.7Z"/></symbol>
+<symbol id="i-newsletter" viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="28" rx="7" fill="currentColor" fill-opacity=".16"/>
+<path d="M7.5 14.5 24 27l16.5-12.5"/></symbol>
+<symbol id="i-calculator" viewBox="0 0 48 48"><rect x="8" y="5" width="32" height="38" rx="6" fill="currentColor" fill-opacity=".16"/>
+<rect x="14" y="11" width="20" height="8" rx="2"/>
+<path d="M17 27h.01"/><path d="M24 27h.01"/><path d="M31 27h.01"/><path d="M17 35h.01"/><path d="M24 35h.01"/><path d="M31 35h.01"/></symbol>
+<symbol id="i-git" viewBox="0 0 48 48"><circle cx="13" cy="11" r="4.5" fill="currentColor" fill-opacity=".16"/><circle cx="13" cy="37" r="4.5" fill="currentColor" fill-opacity=".16"/><circle cx="35" cy="19" r="4.5" fill="currentColor" fill-opacity=".16"/>
+<path d="M13 15.5v17"/><path d="M35 23.5c0 7-9 8-18.5 11"/></symbol>
+<symbol id="i-responsive" viewBox="0 0 48 48"><rect x="5" y="9" width="27" height="21" rx="4" fill="currentColor" fill-opacity=".16"/>
+<path d="M13 40h11"/><path d="M18.5 30v10"/>
+<rect x="34" y="18" width="9" height="20" rx="3"/><path d="M38.5 34h.01"/></symbol>
+</svg>
 
 <header class="site-header">
     <a class="logo" href="index.html">
@@ -45,7 +88,7 @@
     <div class="hero-content">
         <span class="hero-tag">🚀 Learn. Build. Grow.</span>
 
-        <h2>Learn Web Development the Right Way</h2>
+        <h2>Learn Web Development <span class="accent">the Right Way</span></h2>
 
         <p>Build real projects, complete coding challenges, track your progress, 
             and become a better developer one lesson at a time.</p>
@@ -54,12 +97,12 @@
 
         <div class="button-group">
             <a href="auth/auth.html">
-            <div class="card">
+            <div class="card btn-primary">
                 <h3>Sign up</h3>
             </div>
         </a>
         <a href="auth/auth.html">
-            <div class="card" >
+            <div class="card btn-secondary" >
                <h3>Login</h3>
             </div>
         </a>  
@@ -67,13 +110,88 @@
 
         <div class="tech-stack">
 
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JavaScript</span>
-          <span>Git</span>
-          <span>Responsive</span>
+          <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-html"/></svg>HTML</span>
+          <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-css"/></svg>CSS</span>
+          <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-javascript"/></svg>JavaScript</span>
+          <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-git"/></svg>Git</span>
+          <span><svg class="icon icon-sm" aria-hidden="true"><use href="#i-responsive"/></svg>Responsive</span>
 
         </div>
+    </div>
+
+    <div class="hero-visual">
+        <svg class="hero-illustration" viewBox="0 0 520 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A code editor writing a webpage, with the finished page appearing beside it">
+            <!-- editor -->
+            <rect x="10" y="30" width="400" height="300" rx="16" fill="#111" stroke="#2a2a2a"/>
+            <path d="M10 46a16 16 0 0 1 16-16h368a16 16 0 0 1 16 16v28H10Z" fill="#151515"/>
+            <path d="M10 74h400" stroke="#2a2a2a"/>
+            <circle cx="34" cy="52" r="5" fill="#333"/>
+            <circle cx="52" cy="52" r="5" fill="#333"/>
+            <circle cx="70" cy="52" r="5" fill="#f6d88f"/>
+            <text x="100" y="57" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#b8b8b8">index.html</text>
+            <path d="M96 73h72" stroke="#f6d88f" stroke-width="2"/>
+        
+            <g font-family="'Courier New', Consolas, monospace" font-size="15">
+                <g fill="#555" text-anchor="end">
+                    <text x="42" y="108">1</text>
+                    <text x="42" y="134">2</text>
+                    <text x="42" y="160">3</text>
+                    <text x="42" y="186">4</text>
+                    <text x="42" y="212">5</text>
+                    <text x="42" y="238">6</text>
+                    <text x="42" y="264">7</text>
+                    <text x="42" y="290">8</text>
+                </g>
+                <text x="60" y="108" xml:space="preserve"><tspan fill="#f6d88f">&lt;section</tspan> <tspan fill="#b8b8b8">class</tspan><tspan fill="#e8e8e8">=</tspan><tspan fill="#7fd3a0">"hero"</tspan><tspan fill="#f6d88f">&gt;</tspan></text>
+                <text x="60" y="134" xml:space="preserve"><tspan fill="#f6d88f">  &lt;h1&gt;</tspan><tspan fill="#e8e8e8">Hello, world</tspan><tspan fill="#f6d88f">&lt;/h1&gt;</tspan></text>
+                <text x="60" y="160" xml:space="preserve"><tspan fill="#f6d88f">  &lt;p&gt;</tspan><tspan fill="#e8e8e8">Grow every day.</tspan><tspan fill="#f6d88f">&lt;/p&gt;</tspan></text>
+                <text x="60" y="186"><tspan fill="#f6d88f">&lt;/section&gt;</tspan></text>
+                <text x="60" y="238" xml:space="preserve"><tspan fill="#f6d88f">.hero</tspan> <tspan fill="#e8e8e8">{</tspan></text>
+                <text x="60" y="264" xml:space="preserve"><tspan fill="#b8b8b8">  color</tspan><tspan fill="#e8e8e8">:</tspan> <tspan fill="#7fd3a0">gold</tspan><tspan fill="#e8e8e8">;</tspan></text>
+                <text x="60" y="290"><tspan fill="#e8e8e8">}</tspan></text>
+            </g>
+        
+            <!-- tech tiles -->
+            <g fill="none" stroke="#f6d88f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" color="#f6d88f">
+                <g transform="translate(436 20)">
+                    <rect width="64" height="64" rx="18" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+                    <use href="#i-html" x="14" y="14" width="36" height="36"/>
+                </g>
+                <g transform="translate(436 92)">
+                    <rect width="64" height="64" rx="18" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+                    <use href="#i-css" x="14" y="14" width="36" height="36"/>
+                </g>
+                <g transform="translate(436 164)">
+                    <rect width="64" height="64" rx="18" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+                    <use href="#i-javascript" x="14" y="14" width="36" height="36"/>
+                </g>
+            </g>
+        
+            <!-- live preview -->
+            <rect x="262" y="236" width="238" height="190" rx="16" fill="#181818" stroke="#f6d88f" stroke-opacity=".45"/>
+            <path d="M262 252a16 16 0 0 1 16-16h206a16 16 0 0 1 16 16v20H262Z" fill="#1d1d1d"/>
+            <path d="M262 272h238" stroke="#2a2a2a"/>
+            <circle cx="282" cy="254" r="3.5" fill="#444"/>
+            <circle cx="296" cy="254" r="3.5" fill="#444"/>
+            <circle cx="310" cy="254" r="3.5" fill="#444"/>
+            <rect x="330" y="248" width="150" height="12" rx="6" fill="#111"/>
+        
+            <text x="282" y="318" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" fill="#fff">Hello, world</text>
+            <text x="282" y="342" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#b8b8b8">Grow every day.</text>
+        
+            <!-- sprout -->
+            <g fill="none" stroke="#f6d88f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M458 336v-30"/>
+                <path d="M458 312c0-9-7-14-17-14 0 9 7 14 17 14Z" fill="#f6d88f" fill-opacity=".2"/>
+                <path d="M458 306c0-8 6-13 15-13 0 8-6 13-15 13Z" fill="#f6d88f" fill-opacity=".2"/>
+                <path d="M446 336h24"/>
+            </g>
+        
+            <rect x="282" y="366" width="198" height="8" rx="4" fill="#2a2a2a"/>
+            <rect x="282" y="366" width="119" height="8" rx="4" fill="#f6d88f"/>
+            <text x="282" y="398" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#888">3 of 5 lessons done</text>
+        </svg>
+        
     </div>
 
 </section>
@@ -92,19 +210,28 @@
     <div class="grid">
 
         <div class="card">
-            <h3>HTML</h3>
+            <div class="card-head">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-html"/></svg></span>
+                <h3>HTML</h3>
+            </div>
             <p class="eyebrow">12 Lessons</p>
             <p>Learn the structure of the web with HTML.</p>
         </div>
 
         <div class="card">
-            <h3>CSS</h3>
+            <div class="card-head">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-css"/></svg></span>
+                <h3>CSS</h3>
+            </div>
             <p class="eyebrow">18 Lessons</p>
             <p>Style beautiful websites with CSS.</p>
         </div>
 
         <div class="card">
-            <h3>JavaScript</h3>
+            <div class="card-head">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-javascript"/></svg></span>
+                <h3>JavaScript</h3>
+            </div>
             <p class="eyebrow">15 Lessons</p>
             <p>Make your websites interactive with JavaScript.</p>
         </div>
@@ -124,17 +251,26 @@
     <div class="grid">
 
         <div class="card">
-            <h3>Portfolio</h3>
+            <div class="card-head">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-profile"/></svg></span>
+                <h3>Portfolio</h3>
+            </div>
             <p>Build a modern portfolio website to showcase your work.</p>
         </div>
 
         <div class="card">
-            <h3>Landing Page</h3>
+            <div class="card-head">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-responsive"/></svg></span>
+                <h3>Landing Page</h3>
+            </div>
             <p>Build a responsive landing page for a real product.</p>
         </div>
 
         <div class="card">
-            <h3>Calculator</h3>
+            <div class="card-head">
+                <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-calculator"/></svg></span>
+                <h3>Calculator</h3>
+            </div>
             <p>Build your own calculator using HTML, CSS, and JavaScript.</p>
         </div>
 
@@ -148,17 +284,26 @@
              <div class="grid">
 
                 <div class="card">
-                    <h2>Structured Courses</h2>
-                    <p>Step-by-Step designed couses for every programming language</p>
+                    <div class="card-head">
+                        <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-courses"/></svg></span>
+                        <h2>Structured Courses</h2>
+                    </div>
+                    <p>Step-by-step designed courses for every programming language</p>
                 </div>
 
                 <div class="card">
-                    <h2>Practical Challenges</h2>
+                    <div class="card-head">
+                        <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-challenge"/></svg></span>
+                        <h2>Practical Challenges</h2>
+                    </div>
                     <p>Sharpen your skills daily by doing daily challenges</p>
                 </div>
 
                 <div class="card">
-                    <h2>Real Projects</h2>
+                    <div class="card-head">
+                        <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-projects"/></svg></span>
+                        <h2>Real Projects</h2>
+                    </div>
                     <p>Build real-world projects with your daily skills </p>
                 </div>
              </div>

@@ -1,0 +1,155 @@
+  /* Contains: icon system, icons beside card headings,   hero layout + illustration */
+
+.icon{
+    width:26px;
+    height:26px;
+    flex-shrink:0;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2.5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    color:#f6d88f;
+}
+
+.icon-sm{ width:18px; height:18px; }
+.icon-lg{ width:36px; height:36px; }
+
+/* rounded tile that holds an icon */
+.icon-tile{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:#181818;
+    border:1px solid #2a2a2a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+/* =========================
+   ICON BESIDE CARD HEADING
+   <div class="card-head">
+     <span class="icon-tile"><svg class="icon">...</svg></span>
+     <h3>Title</h3>
+   </div>
+========================= */
+
+.card-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:14px;
+}
+
+.card-head h2,
+.card-head h3{
+    font-size:20px;
+    margin:0;
+    line-height:1.2;
+}
+
+/* tidy the text under the heading inside cards */
+.card .eyebrow{
+    margin-bottom:8px;
+    font-size:13px;
+}
+
+.card p:not(.eyebrow){
+    color:#b8b8b8;
+    line-height:1.6;
+}
+
+/* =========================
+   TECH-STACK PILLS WITH ICONS
+========================= */
+
+.tech-stack span{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+}
+
+
+.hero{
+    gap:64px;
+    padding:90px 60px;
+}
+
+.hero-content{
+    flex:1 1 0;
+    min-width:0;
+    max-width:620px;
+    padding:20px 0;
+}
+
+.hero-content h2{
+    font-size:clamp(40px, 4.6vw, 64px);
+}
+
+.hero-content p{
+    line-height:1.6;
+    font-size:20px;
+    max-width:540px;
+}
+
+.hero-content .hero-sub{
+    font-size:18px;
+    line-height:1.4;
+}
+
+.hero-visual{
+    flex:0 1 500px;
+    min-width:0;
+}
+
+.hero-illustration{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* tablet */
+@media (max-width:1024px){
+    .hero{
+        gap:40px;
+        padding:50px 30px;
+    }
+    .hero-content{
+        max-width:none;
+        padding:0;
+    }
+    .hero-content h2{
+        font-size:52px;
+    }
+    .hero-visual{
+        flex:none;
+        width:100%;
+        max-width:460px;
+    }
+}
+
+/* mobile */
+@media (max-width:700px){
+    .hero{
+        padding:40px 20px;
+    }
+    .hero-content h2{
+        font-size:32px;
+    }
+    .hero-content p{
+        font-size:16px;
+    }
+    .hero-content .hero-sub{
+        font-size:14px;
+    }
+    .card-head{
+        gap:12px;
+    }
+    .icon-tile{
+        width:44px;
+        height:44px;
+        border-radius:12px;
+    }
+}

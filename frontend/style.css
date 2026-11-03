@@ -124,6 +124,10 @@ body{
     margin-bottom:25px;
 }
 
+.hero-content h2 .accent{
+    color: #f6d88f;
+    white-space: nowrap;
+}
 .hero-content p{
     font-size:22px;
     color:#b8b8b8;
@@ -173,9 +177,42 @@ body{
     width: auto;
 
 }
+
+.button-group{
+    display: flex;
+    gap: 16px;
+    margin-top: 30px;
+}
 .button-group a{
     text-decoration:none;
     color:inherit;
+}
+.button-group .card{
+    padding: 16px 36px;
+    border-radius: 14px;
+    text-align: center;
+}
+.button-group .card h3{
+    font-size: 18px;
+}
+.button-group .btn-primary{
+    background: #f6d88f;
+    border-color: #f6d88f;
+    color: #111;
+}
+.button-group .btn-primary:hover{
+    background: #ffe3a3;
+    box-shadow: 0, 10px 30px rgba(246, 216, 143, .28);
+}
+.button-group .btn-secondary{
+    background: transparent;
+    border-color: #3a3a3a
+    color: #fff;
+}
+.button-group .btn-secondary:hover{
+    background: #111;
+    border-color: #3a3a3a;
+    color: #f6d88f;
 }
 
 /* =========================

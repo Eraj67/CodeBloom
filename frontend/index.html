@@ -55,32 +55,8 @@
 <rect x="34" y="18" width="9" height="20" rx="3"/><path d="M38.5 34h.01"/></symbol>
 </svg>
 
-<header class="site-header">
-    <a class="logo" href="index.html">
-        <img src="logo.png" alt="CodeBloom Logo" class="logo-img">
-        <span class="code">Code</span><span class="bloom">Bloom</span>
-    </a>
-
-    <nav class="navbar">
-        <a href="index.html" class="active">HOME</a>
-        <a href="courses.html">COURSES</a>
-        <a href="project.html">PROJECT</a>
-        <a href="challenge.html">CHALLENGE</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
-        <a href="#" id="search-toggle" aria-label="Search"> <i class="ti ti-search"></i> </a>
-    </nav>
-<div class="search-box" id="search-box">
-    <input
-        type="text"
-        id="search-input"
-        placeholder="Search courses and lessons..."
-        autocomplete="off"
-    >
-        <div class="search-results" id="search-results"></div>
-
-</div>
-</header>
+<!-- Shared header (edit it in header.js) -->
+<div id="site-header"></div>
 
 
 <section class="hero">
@@ -311,10 +287,16 @@
             </div>
         </section>
 
-<!-- footer -->
     <!-- Shared footer (edit it in footer.js) -->
+     <!-- Page content goes here -->
 <div id="site-footer"></div>
+
+
+<!-- Shared site scripts -->
+<script src="header.js"></script>
 <script src="footer.js"></script>
+<script src="auth.js"></script>
 <script src="script.js"></script>
+
     </body>
 </html>

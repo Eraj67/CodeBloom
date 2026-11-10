@@ -13,23 +13,9 @@
 
     <body>
 
-<header class="site-header">
+<!-- Shared header (edit it in header.js) -->
+<div id="site-header"></div>
 
-    <a class="logo" href="index.html">
-        <img src="../logo.png" alt="CodeBloom Logo" class="logo-img">        
-        <span class="code">Code</span><span class="bloom">Bloom</span>
-    </a>
-
-    <nav class="navbar">
-        <a href="../index.html">HOME</a>
-        <a href="../courses.html">COURSES</a>
-        <a href="../project.html">PROJECT</a>
-        <a href="../challenge.html" class="active">CHALLENGE</a>
-        <a href="../about.html">ABOUT</a>
-        <a href="../contact.html">CONTACT</a>
-    </nav>
-
-</header>
 
   <main>
 
@@ -189,12 +175,16 @@
 </main>
 
 
-<!-- footer -->
-    <!-- Shared footer (edit it in footer.js) -->
-<div id="site-footer"></div>
-<script src="../footer.js"></script>
+        <!-- Shared footer (edit it in footer.js) -->
+        <div id="site-footer"></div>
+
+        <!-- Shared site scripts -->
+        <script src="../header.js"></script>
+        <script src="../footer.js"></script>
+        <script src="../auth.js"></script>
 
         <script src="script.js"></script>
         <script src="progress.js"></script>
+        
     </body>
 </html>

@@ -10,25 +10,11 @@
         <link rel="icon" type="image/png" href="logo.png">
         </head>
 
-<body>
+<!-- Hide shared header search on this page -->
+<body class="no-search">
     
-<header class="site-header">
-
-    <a class="logo" href="index.html">
-        <img src="logo.png" alt="CodeBloom Logo" class="logo-img">
-        <span class="code">Code</span><span class="bloom">Bloom</span>
-    </a>
-
-    <nav class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="courses.html">COURSES</a>
-        <a href="project.html" class="active">PROJECT</a>
-        <a href="challenge.html">CHALLENGE</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
-
-</header>
+<!-- Shared header (edit it in header.js) -->
+<div id="site-header"></div>
 
 
 <!-- Hero -->
@@ -186,6 +172,11 @@
     <!-- Footer -->
     <!-- Shared footer (edit it in footer.js) -->
 <div id="site-footer"></div>
+
+<!-- Shared site scripts -->
+<script src="header.js"></script>
 <script src="footer.js"></script>
+<script src="auth.js"></script>
+
 </body>
 </html>

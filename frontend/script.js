@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search-input");
     const searchResults = document.getElementById("search-results");
 
+    // Some pages (body class "no-search") have no search box, so stop here
+    if (!searchToggle || !searchBox || !searchInput || !searchResults) return;
+
 
     // ===========================================
     // Open / Close Search Box

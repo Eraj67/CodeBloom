@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:4000/api";
+var API_BASE = "http://localhost:4000/api"; // var (not const) so several scripts on one page can declare it
 
 document.addEventListener("DOMContentLoaded", async () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -24,7 +24,7 @@ async function loadLesson(lessonId) {
     document.getElementById("lesson-course").textContent = lesson.course.title.toUpperCase();
     document.getElementById("lesson-title").textContent = lesson.title;
     document.getElementById("lesson-description").textContent = lesson.description || "";
-    document.getElementById("lesson-duration").textContent = `⏱ ${lesson.duration} minutes`;
+    document.getElementById("lesson-duration").innerHTML = `<svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>${Number(lesson.duration)} minutes`;
 
     const contentDiv = document.getElementById("lesson-content");
     if (lesson.content) {

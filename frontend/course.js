@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:4000/api";
+var API_BASE = "http://localhost:4000/api"; // var (not const) so several scripts on one page can declare it
 
 document.addEventListener("DOMContentLoaded", async () => {
   const urlParams = new URLSearchParams(window.location.search);
@@ -37,7 +37,7 @@ async function loadCourse(courseId) {
       card.innerHTML = `
         <h3>Lesson ${lesson.order}: ${lesson.title}</h3>
         <p style="color: #888; font-size: 14px; margin-top: 8px;">${lesson.description || ""}</p>
-        <p style="color: #666; font-size: 13px; margin-top: 8px;">⏱ ${lesson.duration} min</p>
+        <p style="color: #666; font-size: 13px; margin-top: 8px;"><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>${lesson.duration} min</p>
       `;
       grid.appendChild(card);
     });

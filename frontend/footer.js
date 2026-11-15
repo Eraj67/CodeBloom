@@ -1,5 +1,5 @@
 // Shared footer for CodeBloom.
-// Edit the footer here once and every page that loads this script updates.
+// Edit the footer here once and every page that loads this script updates
 (function () {
     // Work out where footer.js lives, so links work from any folder depth.
     var script = document.currentScript;

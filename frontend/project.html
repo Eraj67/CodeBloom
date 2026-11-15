@@ -6,29 +6,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="style.css">
+          <link rel= "stylesheet" href="animations/animations.css">
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
         <link rel="icon" type="image/png" href="logo.png">
         </head>
 
-<body>
+<!-- Hide shared header search on this page -->
+<body class="no-search">
+<script src="icons.js"></script>
     
-<header class="site-header">
-
-    <a class="logo" href="index.html">
-        <img src="logo.png" alt="CodeBloom Logo" class="logo-img">
-        <span class="code">Code</span><span class="bloom">Bloom</span>
-    </a>
-
-    <nav class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="courses.html">COURSES</a>
-        <a href="project.html" class="active">PROJECT</a>
-        <a href="challenge.html">CHALLENGE</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
-
-</header>
+<!-- Shared header (edit it in header.js) -->
+<div id="site-header"></div>
 
 
 <!-- Hero -->
@@ -48,18 +36,27 @@
         <p class="eyebrow">FEATURED PROJECTS</p>
         <div class="grid">
             <div class="card">
-                <h3>🌐 Portfolio Website</h3>
-                <p>⭐ Beginner</p>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-profile"/></svg></span>
+                    <h3>Portfolio Website</h3>
+                </div>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-1"/></svg>Beginner</p>
             </div>
 
             <div class="card">
-                <h3>🧮 Calculator</h3>
-                <p>⭐ Beginner</p>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-calculator"/></svg></span>
+                    <h3>Calculator</h3>
+                </div>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-1"/></svg>Beginner</p>
             </div>
 
             <div class="card">
-                <h3>☁️ Weather App</h3>
-                <p>⭐⭐ Intermediate</p>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-weather"/></svg></span>
+                    <h3>Weather App</h3>
+                </div>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-2"/></svg>Intermediate</p>
             </div>
         </div>
     </section>
@@ -69,19 +66,31 @@
         <p class="eyebrow">PROJECT CATEGORIES</p>
         <div class="grid">
             <div class="card">
-                <h3>🌐 Frontend</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-html"/></svg></span>
+                    <h3>Frontend</h3>
+                </div>
             </div>
 
             <div class="card">
-                <h3>⚡ JavaScript</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-javascript"/></svg></span>
+                    <h3>JavaScript</h3>
+                </div>
             </div>
 
             <div class="card">
-                <h3>🎨 CSS</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-css"/></svg></span>
+                    <h3>CSS</h3>
+                </div>
             </div>
 
             <div class="card">
-                <h3>📱 Responsive Design</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-responsive"/></svg></span>
+                    <h3>Responsive Design</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -93,9 +102,12 @@
 
             <!-- Project 1 -->
             <div class="challenge-card">
-                <h3>🌐 Personal Portfolio</h3>
-                <p>⭐⭐ Beginner</p>
-                <p>⏱ 2–3 Hours</p>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-profile"/></svg></span>
+                    <h3>Personal Portfolio</h3>
+                </div>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-1"/></svg>Beginner</p>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>2–3 Hours</p>
                 <p>
                     <strong>Skills:</strong><br>
                     HTML • CSS
@@ -108,9 +120,12 @@
 
             <!-- Project 2 -->
             <div class="challenge-card">
-                <h3>🚀 Landing Page</h3>
-                <p>⭐⭐ Beginner</p>
-                <p>⏱ 2 Hours</p>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-responsive"/></svg></span>
+                    <h3>Landing Page</h3>
+                </div>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-1"/></svg>Beginner</p>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>2 Hours</p>
                 <p>
                     <strong>Skills:</strong><br>
                     HTML • CSS • Flexbox
@@ -123,9 +138,12 @@
 
             <!-- Project 3 -->
             <div class="challenge-card">
-                <h3>✅ Todo App</h3>
-                <p>⭐⭐ Intermediate</p>
-                <p>⏱ 4 Hours</p>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-todo"/></svg></span>
+                    <h3>Todo App</h3>
+                </div>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-2"/></svg>Intermediate</p>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>4 Hours</p>
                 <p>
                     <strong>Skills:</strong><br>
                     JavaScript • DOM
@@ -138,9 +156,12 @@
 
             <!-- Project 4 -->
             <div class="challenge-card">
-                <h3>🌦 Weather App</h3>
-                <p>⭐⭐ Intermediate</p>
-                <p>⏱ 5 Hours</p>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-weather"/></svg></span>
+                    <h3>Weather App</h3>
+                </div>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-2"/></svg>Intermediate</p>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>5 Hours</p>
                 <p>
                     <strong>Skills:</strong><br>
                     API • JavaScript
@@ -153,9 +174,12 @@
 
             <!-- Project 5 -->
             <div class="challenge-card">
-                <h3>🛒 E-Commerce Homepage</h3>
-                <p>⭐⭐⭐ Advanced</p>
-                <p>⏱ 6 Hours</p>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg></span>
+                    <h3>E-Commerce Homepage</h3>
+                </div>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-3"/></svg>Advanced</p>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>6 Hours</p>
                 <p>
                     <strong>Skills:</strong><br>
                     HTML • CSS • JavaScript
@@ -168,9 +192,12 @@
 
             <!-- Project 6 -->
             <div class="challenge-card">
-                <h3>🎬 Movie Search App</h3>
-                <p>⭐⭐⭐ Advanced</p>
-                <p>⏱ 7 Hours</p>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></span>
+                    <h3>Movie Search App</h3>
+                </div>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-3"/></svg>Advanced</p>
+                <p><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>7 Hours</p>
                 <p>
                     <strong>Skills:</strong><br>
                     API • JavaScript • Fetch
@@ -186,6 +213,12 @@
     <!-- Footer -->
     <!-- Shared footer (edit it in footer.js) -->
 <div id="site-footer"></div>
+
+<!-- Shared site scripts -->
+ <script src="animations/animations.js"></script>
+<script src="header.js"></script>
 <script src="footer.js"></script>
+<script src="auth.js"></script>
+
 </body>
 </html>

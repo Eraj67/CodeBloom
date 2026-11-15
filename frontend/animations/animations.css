@@ -1,0 +1,464 @@
+/* css animations */
+:root{
+    --cb-gold:#f6d88f;
+    --cb-ease-out:cubic-bezier(.16, 1, .3, 1);   /* fast start, long soft landing */
+    --cb-ease:cubic-bezier(.4, 0, .2, 1);        /* standard in/out */
+}
+
+
+/* =====================================================================
+   SMOOTH SCROLLING
+===================================================================== */
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:90px;   /* anchor targets stop below the header */
+}
+
+
+/* =====================================================================
+    SCROLL REVEAL 
+===================================================================== */
+.js-anim .reveal-item{
+    opacity:0;
+    translate:0 26px;
+    will-change:opacity, translate;
+    transition:
+        opacity    .8s var(--cb-ease-out) var(--d, 0ms),
+        translate  .8s var(--cb-ease-out) var(--d, 0ms),
+        scale      .8s var(--cb-ease-out) var(--d, 0ms),
+        transform        .35s var(--cb-ease-out),
+        box-shadow       .35s var(--cb-ease-out),
+        background-color .35s var(--cb-ease),
+        border-color     .35s var(--cb-ease);
+}
+
+.js-anim .reveal-item[data-reveal="fade"] { translate:none; }
+.js-anim .reveal-item[data-reveal="left"] { translate:-34px 0; }
+.js-anim .reveal-item[data-reveal="right"]{ translate:34px 0; }
+.js-anim .reveal-item[data-reveal="zoom"] { translate:none; scale:.94; }
+
+.js-anim .reveal-item.in-view{
+    opacity:1;
+    translate:0 0;
+    scale:1;
+    will-change:auto;
+}
+
+
+/* =====================================================================
+    HERO ENTRANCE  (home page
+     This puts everything in reading order, with a softer curve.
+===================================================================== */
+@keyframes cbRise{
+    from{ opacity:0; translate:0 22px; }
+    to  { opacity:1; translate:0 0; }
+}
+
+.hero-content .hero-tag,
+.hero-content h2,
+.hero-content p,
+.hero-content .hero-sub,
+.hero-content .button-group,
+.hero-content .tech-stack{
+    animation:cbRise .95s var(--cb-ease-out) both;
+    opacity:1;
+}
+
+.hero-content .hero-tag    { animation-delay:.05s; }
+.hero-content h2           { animation-delay:.15s; }
+.hero-content p            { animation-delay:.32s; }
+.hero-content .hero-sub    { animation-delay:.44s; }
+.hero-content .button-group{ animation-delay:.56s; }
+.hero-content .tech-stack  { animation-delay:.68s; }
+
+/* One soft light sweep across "the Right Way", once, after the entrance */
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+    .hero-content h2 .accent{
+        background:linear-gradient(100deg,
+            #f6d88f 0%, #f6d88f 40%, #fff3cf 50%, #f6d88f 60%, #f6d88f 100%);
+        background-size:250% 100%;
+        background-position:100% 0;
+        -webkit-background-clip:text;
+        background-clip:text;
+        -webkit-text-fill-color:transparent;
+        color:transparent;
+        animation:cbShimmer 2.6s var(--cb-ease) 1.3s 1 both;
+    }
+}
+@keyframes cbShimmer{
+    from{ background-position:100% 0; }
+    to  { background-position:0 0; }
+}
+
+
+/* =====================================================================
+   HERO ILLUSTRATION
+===================================================================== */
+@keyframes cbVisualIn{
+    from{ opacity:0; translate:30px 0; scale:.97; }
+    to  { opacity:1; translate:0 0;   scale:1; }
+}
+.hero-visual{
+    animation:cbVisualIn 1.15s var(--cb-ease-out) .25s both;
+}
+
+@keyframes cbLine{
+    from{ opacity:0; translate:-12px 0; }
+    to  { opacity:1; translate:0 0; }
+}
+@keyframes cbFade{
+    from{ opacity:0; }
+    to  { opacity:1; }
+}
+
+/* line numbers, then the 7 code lines one after another */
+.hero-illustration g[font-family] > g{
+    animation:cbFade .6s ease .8s both;
+}
+.hero-illustration g[font-family] > text{
+    animation:cbLine .65s var(--cb-ease-out) both;
+}
+.hero-illustration g[font-family] > text:nth-of-type(1){ animation-delay:.95s; }
+.hero-illustration g[font-family] > text:nth-of-type(2){ animation-delay:1.1s; }
+.hero-illustration g[font-family] > text:nth-of-type(3){ animation-delay:1.25s; }
+.hero-illustration g[font-family] > text:nth-of-type(4){ animation-delay:1.4s; }
+.hero-illustration g[font-family] > text:nth-of-type(5){ animation-delay:1.7s; }
+.hero-illustration g[font-family] > text:nth-of-type(6){ animation-delay:1.85s; }
+.hero-illustration g[font-family] > text:nth-of-type(7){ animation-delay:2s; }
+
+/* HTML / CSS / JS tiles: pop in, then drift gently */
+@keyframes cbPop{
+    from{ opacity:0; scale:.8; }
+    to  { opacity:1; scale:1; }
+}
+@keyframes cbBob{
+    0%, 100%{ translate:0 0; }
+    50%     { translate:0 -5px; }
+}
+.hero-illustration g[transform^="translate(436"]{
+    transform-box:fill-box;
+    transform-origin:50% 50%;
+    animation:
+        cbPop .75s var(--cb-ease-out) both,
+        cbBob 5.5s ease-in-out infinite;
+}
+.hero-illustration g[transform^="translate(436"]:nth-of-type(1){ animation-delay:.6s,  1.6s; }
+.hero-illustration g[transform^="translate(436"]:nth-of-type(2){ animation-delay:.75s, 2.1s; }
+.hero-illustration g[transform^="translate(436"]:nth-of-type(3){ animation-delay:.9s,  2.6s; }
+
+/* the finished page appears once the code is done */
+.hero-illustration text[x="282"][y="318"]{ animation:cbLine .7s var(--cb-ease-out) 2.15s both; }
+.hero-illustration text[x="282"][y="342"]{ animation:cbLine .7s var(--cb-ease-out) 2.3s both; }
+.hero-illustration text[x="282"][y="398"]{ animation:cbFade .7s ease 2.6s both; }
+
+/* progress bar fills */
+@keyframes cbFill{
+    from{ scale:0 1; }
+    to  { scale:1 1; }
+}
+.hero-illustration rect[y="366"][fill="#f6d88f"]{
+    transform-box:fill-box;
+    transform-origin:0 50%;
+    animation:cbFill 1.2s var(--cb-ease-out) 2.6s both;
+}
+
+/* sprout grows from the ground */
+@keyframes cbGrow{
+    from{ opacity:0; scale:.2; }
+    to  { opacity:1; scale:1; }
+}
+.hero-illustration g:has(> path[d^="M458 336"]){
+    transform-box:fill-box;
+    transform-origin:50% 100%;
+    animation:cbGrow 1s var(--cb-ease-out) 3s both;
+}
+
+
+/* =====================================================================
+   NAVIGATION
+===================================================================== */
+/* gold underline: slides in from the left, leaves to the right.
+   ">" means only the real menu links, never the user dropdown. */
+.navbar > a{
+    position:relative;
+}
+.navbar > a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:-7px;
+    height:2px;
+    border-radius:2px;
+    background:var(--cb-gold);
+    transform:scaleX(0);
+    transform-origin:right center;
+    transition:transform .4s var(--cb-ease-out);
+}
+.navbar > a:hover::after,
+.navbar > a.active::after{
+    transform:scaleX(1);
+    transform-origin:left center;
+}
+/* the search icon gets no underline */
+#search-toggle::after{
+    display:none;
+}
+
+/* search icon: small, friendly pop */
+#search-toggle{
+    display:inline-flex;
+    align-items:center;
+    transition:scale .3s var(--cb-ease-out), color .3s ease;
+}
+#search-toggle:hover{
+    scale:1.15;
+}
+
+/* search box drops in instead of snapping open */
+.search-box{
+    transform-origin:100% 0;
+}
+.search-box.active{
+    animation:cbDrop .3s var(--cb-ease-out) both;
+}
+@keyframes cbDrop{
+    from{ opacity:0; translate:0 -8px; scale:.97; }
+    to  { opacity:1; translate:0 0;    scale:1; }
+}
+
+/* logo: the sprout waves hello on hover */
+.logo-img{
+    transform-origin:50% 100%;
+}
+.logo:hover .logo-img{
+    animation:cbSway .9s var(--cb-ease) both;
+}
+@keyframes cbSway{
+    0%, 100%{ rotate:0deg; }
+    20%     { rotate:-10deg; }
+    45%     { rotate:7deg; }
+    70%     { rotate:-4deg; }
+}
+
+
+/* =====================================================================
+   CARDS  (lift, gold edge, cursor spotlight, icon reaction)
+===================================================================== */
+.card,
+.challenge-card{
+    position:relative;
+    isolation:isolate;
+}
+
+/* only on devices with a real mouse.. */
+@media (hover:hover) and (pointer:fine){
+
+    .card:hover,
+    .challenge-card:hover{
+        transform:translateY(-6px);
+        border-color:rgba(246, 216, 143, .42);
+        box-shadow:
+            0 22px 44px -16px rgba(0, 0, 0, .75),
+            0 10px 34px -12px rgba(246, 216, 143, .22);
+    }
+
+    /* soft gold light that follows the mouse (animations.js sets --mx / --my) */
+    .card:not(.btn-primary):not(.btn-secondary)::before,
+    .challenge-card::before{
+        content:"";
+        position:absolute;
+        inset:0;
+        z-index:-1;
+        border-radius:inherit;
+        pointer-events:none;
+        opacity:0;
+        background:radial-gradient(300px circle at var(--mx, 50%) var(--my, 0%),
+                   rgba(246, 216, 143, .12), transparent 70%);
+        transition:opacity .45s var(--cb-ease);
+    }
+    .card:not(.btn-primary):not(.btn-secondary):hover::before,
+    .challenge-card:hover::before{
+        opacity:1;
+    }
+}
+
+/* icon tile reacts when its card is hovered */
+.icon-tile{
+    transition:background-color .35s var(--cb-ease), border-color .35s var(--cb-ease);
+}
+.icon-tile .icon{
+    transition:scale .5s var(--cb-ease-out), rotate .5s var(--cb-ease-out);
+}
+@media (hover:hover) and (pointer:fine){
+    .card:hover .icon-tile,
+    .challenge-card:hover .icon-tile{
+        background-color:#1f1c13;
+        border-color:rgba(246, 216, 143, .5);
+    }
+    .card:hover .icon-tile .icon,
+    .challenge-card:hover .icon-tile .icon{
+        scale:1.14;
+        rotate:-5deg;
+    }
+}
+
+.card:active,
+.challenge-card:active{
+    transform:translateY(-2px) scale(.985);
+    transition-duration:.12s;
+}
+
+
+/* =====================================================================
+   BUTTONS  (Sign up / Login)
+===================================================================== */
+.button-group .card{
+    overflow:hidden;
+}
+
+/* a band of light sweeps across on hover */
+.button-group .card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+    translate:-130% 0;
+    background:linear-gradient(105deg,
+        transparent 32%, rgba(255, 255, 255, .38) 50%, transparent 68%);
+    transition:translate .9s var(--cb-ease-out);
+}
+.button-group .btn-secondary::after{
+    background:linear-gradient(105deg,
+        transparent 32%, rgba(246, 216, 143, .2) 50%, transparent 68%);
+}
+@media (hover:hover) and (pointer:fine){
+    .button-group .card:hover{
+        transform:translateY(-3px);
+    }
+    .button-group .card:hover::after{
+        translate:130% 0;
+    }
+}
+.button-group .card:active{
+    transform:translateY(0) scale(.97);
+}
+
+
+/* =====================================================================
+   SMALL DETAILS
+===================================================================== */
+/* hero pills: calmer float (moves "translate", so hover can still lift) */
+@keyframes cbPill{
+    0%, 100%{ translate:0 0; }
+    50%     { translate:0 -4px; }
+}
+.tech-stack span{
+    animation-name:cbPill;
+    animation-duration:5s;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:infinite;
+    cursor:default;
+    transition:
+        border-color .3s ease,
+        color .3s ease,
+        background-color .3s ease,
+        transform .4s var(--cb-ease-out);
+}
+@media (hover:hover) and (pointer:fine){
+    .tech-stack span:hover{
+        transform:translateY(-3px);
+        border-color:var(--cb-gold);
+        color:var(--cb-gold);
+        background-color:#181818;
+    }
+}
+
+/* "View all" arrows nudge forward */
+.section-link{
+    display:inline-block;
+    transition:translate .4s var(--cb-ease-out), opacity .3s ease;
+}
+.section-link:hover{
+    translate:7px 0;
+}
+
+/* footer links slide, social icons lift */
+.footer-col a{
+    transition:translate .35s var(--cb-ease-out), color .3s ease;
+}
+.footer-col a:hover{
+    translate:5px 0;
+}
+.footer-socials a{
+    transition:background-color .3s ease, color .3s ease, translate .4s var(--cb-ease-out);
+}
+.footer-socials a:hover{
+    translate:0 -4px;
+}
+
+/* form fields soft gold ring when focused */
+input, textarea, select{
+    transition:border-color .25s var(--cb-ease), box-shadow .25s var(--cb-ease), background-color .25s var(--cb-ease);
+}
+input:not([type="checkbox"]):not([type="radio"]):focus,
+textarea:focus,
+select:focus{
+    box-shadow:0 0 0 3px rgba(246, 216, 143, .14);
+}
+
+/* keyboard users: clear gold focus outline (zero specificity, easy to override) */
+:where(a, button, summary, [tabindex]):focus-visible{
+    outline:2px solid var(--cb-gold);
+    outline-offset:3px;
+}
+
+
+/* =====================================================================
+    SCROLL PROGRESS BAR  (thin gold line at the very top)
+===================================================================== */
+.scroll-progress{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:3px;
+    z-index:2000;
+    pointer-events:none;
+    transform-origin:0 50%;
+    transform:scaleX(var(--p, 0));
+    background:linear-gradient(90deg, #c9a24d, #f6d88f 60%, #fff1c7);
+    box-shadow:0 0 12px rgba(246, 216, 143, .55);
+    opacity:0;
+    transition:opacity .3s ease;
+}
+.scroll-progress.is-on{
+    opacity:1;
+}
+
+
+/* =====================================================================
+   People who turn on "reduce motion" in their system get a calm page
+   everything is simply there, nothing moves
+===================================================================== */
+@media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+
+    *, *::before, *::after{
+        animation-duration:.01ms !important;
+        animation-delay:0s !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+        transition-delay:0s !important;
+        scroll-behavior:auto !important;
+    }
+
+    .reveal-item{ opacity:1 !important; translate:none !important; scale:none !important; }
+    .scroll-progress{ display:none; }
+}
+
+@media print{
+    .reveal-item{ opacity:1 !important; translate:none !important; scale:none !important; }
+    .scroll-progress{ display:none; }
+}

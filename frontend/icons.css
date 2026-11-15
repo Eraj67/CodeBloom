@@ -1,0 +1,63 @@
+/* CodeBloom icon styles: loaded automatically by icons.js */
+
+.icon{
+    width:26px;
+    height:26px;
+    flex-shrink:0;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:2.5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    color:#f6d88f;
+}
+
+.icon-sm{ width:18px; height:18px; }
+.icon-lg{ width:36px; height:36px; }
+
+.icon-tile{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:#181818;
+    border:1px solid #2a2a2a;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.card-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:14px;
+}
+
+.card-head h2,
+.card-head h3{
+    font-size:20px;
+    margin:0;
+    line-height:1.2;
+}
+
+/* small icon beside a line of text (difficulty, time, lessons) */
+.meta-icon{
+    vertical-align:-4px;
+    margin-right:8px;
+}
+
+/* small icon inside an eyebrow label */
+.eyebrow .icon{
+    vertical-align:-4px;
+    margin-right:8px;
+}
+
+@media (max-width:700px){
+    .card-head{ gap:12px; }
+    .icon-tile{
+        width:44px;
+        height:44px;
+        border-radius:12px;
+    }
+}

@@ -6,29 +6,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="style.css">
+         <link rel= "stylesheet" href="animations/animations.css">
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
         <link rel="icon" type="image/png" href="logo.png">
         </head>
 
-<body>
+<!-- Hide shared header search on this page -->
+<body class="no-search">
+<script src="icons.js"></script>
  
-<header class="site-header">
-
-    <a class="logo" href="index.html">
-        <img src="logo.png" alt="CodeBloom Logo" class="logo-img">
-        <span class="code">Code</span><span class="bloom">Bloom</span>
-    </a>
-
-    <nav class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="courses.html">COURSES</a>
-        <a href="project.html">PROJECT</a>
-        <a href="challenge.html" class="active">CHALLENGE</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
-
-</header>  
+<!-- Shared header (edit it in header.js) -->
+<div id="site-header"></div>
 
 <section class="section">
 
@@ -48,26 +36,35 @@
 
 
         <div class="challenge-card">
-            <h3>HTML Challenge</h3>
+            <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-html"/></svg></span>
+                    <h3>HTML Challenge</h3>
+                </div>
             <p>Build your first webpage.</p>
-            <p><strong>🟢 Difficulty:</strong> Beginner</p>
-            <p><strong>⏱ Time:</strong> 15 min</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-1"/></svg>Difficulty:</strong> Beginner</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>Time:</strong> 15 min</p>
             <a href="challengespage/HTML-challenge-webpage.html">Start →</a>
         </div>
 
         <div class="challenge-card">
-            <h3>CSS Challenge</h3>
+            <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-css"/></svg></span>
+                    <h3>CSS Challenge</h3>
+                </div>
             <p>Create a responsive card layout.</p>
-            <p><strong>🟢 Difficulty:</strong> Beginner</p>
-            <p><strong>⏱ Time:</strong> 20 min</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-1"/></svg>Difficulty:</strong> Beginner</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>Time:</strong> 20 min</p>
             <a href="challengespage/CSS-challenge-responsive.html">Start →</a>
         </div>
 
         <div class="challenge-card">
-            <h3>JavaScript Challenge</h3>
+            <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-javascript"/></svg></span>
+                    <h3>JavaScript Challenge</h3>
+                </div>
             <p>Create a simple counter app.</p>
-            <p><strong>🟢 Difficulty:</strong> Beginner</p>
-            <p><strong>⏱ Time:</strong> 25 min</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-1"/></svg>Difficulty:</strong> Beginner</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>Time:</strong> 25 min</p>
             <a href="challengespage/JavaScript-challenge-counter-app.html">Start →</a>
         </div>
         </div>
@@ -82,26 +79,35 @@
     <div class="grid">
 
         <div class="challenge-card">
-            <h3>HTML Forms</h3>
+            <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-todo"/></svg></span>
+                    <h3>HTML Forms</h3>
+                </div>
             <p>Create a complete registration form.</p>
-            <p><strong>🟡 Difficulty:</strong> Intermediate</p>
-            <p><strong>⏱ Time:</strong> 30 min</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-2"/></svg>Difficulty:</strong> Intermediate</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>Time:</strong> 30 min</p>
             <a href="challengespage/HTML-Forms.html">Start →</a>
         </div>
 
         <div class="challenge-card">
-            <h3>CSS Grid</h3>
+            <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg></span>
+                    <h3>CSS Grid</h3>
+                </div>
             <p>Build a responsive dashboard.</p>
-            <p><strong>🟡 Difficulty:</strong> Intermediate</p>
-            <p><strong>⏱ Time:</strong> 45 min</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-2"/></svg>Difficulty:</strong> Intermediate</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>Time:</strong> 45 min</p>
             <a href="challengespage/CSS-Grid.html">Start →</a>
         </div>
 
         <div class="challenge-card">
-            <h3>JavaScript DOM</h3>
+            <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-javascript"/></svg></span>
+                    <h3>JavaScript DOM</h3>
+                </div>
             <p>Create a Todo List.</p>
-            <p><strong>🟡 Difficulty:</strong> Intermediate</p>
-            <p><strong>⏱ Time:</strong> 45 min</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-2"/></svg>Difficulty:</strong> Intermediate</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>Time:</strong> 45 min</p>
             <a href="challengespage/JavaScript-DOM.html">Start →</a>
         </div>
 
@@ -116,36 +122,49 @@
     <div class="grid">
 
         <div class="challenge-card">
-            <h3>Landing Page</h3>
+            <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-responsive"/></svg></span>
+                    <h3>Landing Page</h3>
+                </div>
             <p>Build a complete responsive landing page.</p>
-            <p><strong>🔴 Difficulty:</strong> Advanced</p>
-            <p><strong>⏱ Time:</strong> 60 min</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-3"/></svg>Difficulty:</strong> Advanced</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>Time:</strong> 60 min</p>
             <a href="challengespage/Landing-Page.html">Start →</a>
         </div>
 
         <div class="challenge-card">
-            <h3>CSS Animation</h3>
+            <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-rocket"/></svg></span>
+                    <h3>CSS Animation</h3>
+                </div>
             <p>Create beautiful interactive animations.</p>
-            <p><strong>🔴 Difficulty:</strong> Advanced</p>
-            <p><strong>⏱ Time:</strong> 45 min</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-3"/></svg>Difficulty:</strong> Advanced</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>Time:</strong> 45 min</p>
             <a href="challengespage/CSS-Animation.html">Start →</a>
         </div>
 
         <div class="challenge-card">
-            <h3>JavaScript API</h3>
+            <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-share"/></svg></span>
+                    <h3>JavaScript API</h3>
+                </div>
             <p>Fetch and display API data.</p>
-            <p><strong>🔴 Difficulty:</strong> Advanced</p>
-            <p><strong>⏱ Time:</strong> 60 min</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-3"/></svg>Difficulty:</strong> Advanced</p>
+            <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>Time:</strong> 60 min</p>
             <a href="challengespage/JavaScript-API.html">Start →</a>
         </div>
     </div>
 
 </section>
 
-<!-- Footer -->
     <!-- Shared footer (edit it in footer.js) -->
 <div id="site-footer"></div>
+
+<!-- Shared site scripts -->
+ <script src="animations/animations.js"></script>
 <script src="footer.js"></script>
+<script src="header.js"></script>
+<script src="auth.js"></script>
         <script src="script.js"></script>
 
   </body>

@@ -153,3 +153,14 @@
         border-radius:12px;
     }
 }
+/* header wrap*/
+@media (max-width:1024px){
+    .site-header{
+        flex-wrap:wrap;
+        gap:15px 30px;
+    }
+    .navbar{
+        flex-wrap:wrap;
+        gap:12px 24px;
+    }
+}

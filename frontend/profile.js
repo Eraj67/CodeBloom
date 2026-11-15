@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:4000/api";
+var API_BASE = "http://localhost:4000/api"; // var (not const) so several scripts on one page can declare it
 
 document.addEventListener("DOMContentLoaded", async () => {
   const isLoggedIn = await auth.init();

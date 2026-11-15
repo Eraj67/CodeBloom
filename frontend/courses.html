@@ -6,30 +6,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="style.css">
+          <link rel= "stylesheet" href="animations/animations.css">
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
         <link rel="icon" type="image/png" href="logo.png">
         </head>
   
-<body>
+<!-- Hide shared header search on this page -->
+<body class="no-search">
+<script src="icons.js"></script>
   
-<header class="site-header">
-
-    <a class="logo" href="index.html">
-        <img src="logo.png" alt="CodeBloom Logo" class="logo-img">
-        <span class="code">Code</span><span class="bloom">Bloom</span>
-    </a>
-
-    <nav class="navbar">
-        <a href="index.html">HOME</a>
-        <a href="courses.html" class="active">COURSES</a>
-        <a href="project.html">PROJECT</a>
-        <a href="challenge.html">CHALLENGE</a>
-        <a href="about.html">ABOUT</a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
-
-</header>  
-
+<!-- Shared header (edit it in header.js) -->
+<div id="site-header"></div>
 
     <!-- Hero -->
     <section class="section">
@@ -50,11 +37,14 @@
             <!-- HTML -->
             <div class="challenge-card">
                 <p class="eyebrow">Beginner</p>
-                <h3>HTML</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-html"/></svg></span>
+                    <h3>HTML</h3>
+                </div>
                 <p class="section-description">
                     Learn the building blocks of every website.
                 </p>
-                <p><strong>📚 12 Lessons</strong></p>
+                <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-courses"/></svg>12 Lessons</strong></p>
                 <br>
                 <a href="courses/coursespage/htmlcourse.html">Start Learning →</a>
             </div>
@@ -62,11 +52,14 @@
             <!-- CSS -->
             <div class="challenge-card">
                 <p class="eyebrow">Intermediate</p>
-                <h3>CSS</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-css"/></svg></span>
+                    <h3>CSS</h3>
+                </div>
                 <p class="section-description">
                     Style beautiful and responsive websites.
                 </p>
-                <p><strong>📚 18 Lessons</strong></p>
+                <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-courses"/></svg>18 Lessons</strong></p>
                 <br>
                 <a href="courses/coursespage/csscourse.html">Start Learning →</a>
             </div>
@@ -74,11 +67,14 @@
             <!-- JavaScript -->
             <div class="challenge-card">
                 <p class="eyebrow">Intermediate</p>
-                <h3>JavaScript</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-javascript"/></svg></span>
+                    <h3>JavaScript</h3>
+                </div>
                 <p class="section-description">
                 Add interactivity and dynamic behavior to your web pages.
                 </p>
-                <p><strong>📚 24 Lessons</strong></p>
+                <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-courses"/></svg>24 Lessons</strong></p>
                 <br>
                 <a href="courses/coursespage/javascriptcourse.html">Start Learning →</a>
             </div>
@@ -86,11 +82,14 @@
             <!-- Git & GitHub -->
             <div class="challenge-card">
                 <p class="eyebrow">Beginner</p>
-                <h3>Git & GitHub</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-git"/></svg></span>
+                    <h3>Git & GitHub</h3>
+                </div>
                 <p class="section-description">
                     Learn version control and collaborate like a professional.
                 </p>
-                <p><strong>📚 10 Lessons</strong></p>
+                <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-courses"/></svg>10 Lessons</strong></p>
                 <br>
                 <a href="courses/coursespage/githubcourse.html">Start Learning →</a>
             </div>
@@ -98,11 +97,14 @@
             <!-- Responsive Design -->
             <div class="challenge-card">
                 <p class="eyebrow">Intermediate</p>
-                <h3>Responsive Design</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-responsive"/></svg></span>
+                    <h3>Responsive Design</h3>
+                </div>
                 <p class="section-description">
                     Build websites that work beautifully on every device.
                 </p>
-                <p><strong>📚 8 Lessons</strong></p>
+                <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-courses"/></svg>8 Lessons</strong></p>
                 <br>
                 <a href="courses/coursespage/responsivedesign.html">Start Learning →</a>
             </div>
@@ -110,22 +112,30 @@
             <!-- Projects -->
             <div class="challenge-card">
                 <p class="eyebrow">Advanced</p>
-                <h3>Real Projects</h3>
+                <div class="card-head">
+                    <span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#i-projects"/></svg></span>
+                    <h3>Real Projects</h3>
+                </div>
                 <p class="section-description">
                     Apply your skills by creating complete websites and applications.
                 </p>
-                <p><strong>📚 15 Projects</strong></p>
-                <p><strong>⏱ 3 Hours</strong></p>
-                <p><strong>⭐ Beginner</strong></p>
+                <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-courses"/></svg>15 Projects</strong></p>
+                <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-clock"/></svg>3 Hours</strong></p>
+                <p><strong><svg class="icon icon-sm meta-icon" aria-hidden="true"><use href="#i-level-1"/></svg>Beginner</strong></p>
                 <br>
                 <a href="project.html">Start Learning →</a>
             </div>
         </div>
     </section>
-    <!-- FOOTER -->
+
     <!-- Shared footer (edit it in footer.js) -->
 <div id="site-footer"></div>
+
+<!-- Shared site scripts -->
+ <script src="animations/animations.js"></script>
 <script src="footer.js"></script>
+<script src="header.js"></script>
+<script src="auth.js"></script>
 <script src="courses.js"></script>
 </body>
 </html>

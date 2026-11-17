@@ -12,6 +12,7 @@ const envSchema = z.object({
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
   CONTACT_EMAIL_TO: z.string().email(),
   RESEND_API_KEY: z.string().optional().default(""),
+  TRUST_PROXY: z.coerce.number().int().min(0).default(0),
 });
 
 const parsed = envSchema.safeParse(process.env);

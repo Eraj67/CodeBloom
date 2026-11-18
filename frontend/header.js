@@ -16,6 +16,10 @@
     <a href="${base}courses.html">COURSES</a>
     <a href="${base}project.html">PROJECT</a>
     <a href="${base}challenge.html">CHALLENGE</a>
+    <a href="${base}dashboard.html" id="dashboard-link" style="display:none;">
+    DASHBOARD
+</a>
+
     <a href="${base}about.html">ABOUT</a>
     <a href="${base}contact.html">CONTACT</a>
 

@@ -14,6 +14,8 @@ import progressRoutes from "./routes/progress.routes";
 export function createApp() {
   const app = express();
 
+  app.set("trust proxy", env.TRUST_PROXY);
+
   app.use(
     helmet({
       crossOriginResourcePolicy: { policy: "cross-origin" },

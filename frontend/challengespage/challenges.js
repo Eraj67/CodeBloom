@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:4000/api";
+const API_BASE = window.CODEBLOOM_CONFIG.API_BASE;
 
 document.addEventListener("DOMContentLoaded", async () => {
     await auth.init();

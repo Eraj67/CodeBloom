@@ -32,7 +32,16 @@ const auth = {
     const navbar = document.getElementById("navbar");
     if (!navbar) return;
 
+   
+    const dashboardLink = document.getElementById("dashboard-link");
+
+    if (dashboardLink) {
+      dashboardLink.style.display = this.isLoggedIn ? "" : "none";
+    }
+
+
     const loginLinks = navbar.querySelectorAll('a[href="auth/auth.html"]');
+
     loginLinks.forEach((link) => {
       if (this.isLoggedIn) {
         link.style.display = "none";
@@ -42,6 +51,7 @@ const auth = {
     });
 
     const existingUserMenu = document.getElementById("user-menu");
+
     if (existingUserMenu) {
       existingUserMenu.remove();
     }
@@ -50,36 +60,49 @@ const auth = {
       const userMenu = document.createElement("div");
       userMenu.id = "user-menu";
       userMenu.className = "user-menu";
+
       userMenu.innerHTML = `
         <div class="user-menu-trigger">
           <div class="user-avatar-small">
-            ${this.user.profile?.avatarUrl
-              ? `<img src="${this.user.profile.avatarUrl}" alt="Avatar">`
-              : `<i class="ti ti-user"></i>`
+            ${
+              this.user.profile?.avatarUrl
+                ? `<img src="${this.user.profile.avatarUrl}" alt="Avatar">`
+                : `<i class="ti ti-user"></i>`
             }
           </div>
-          <span class="user-name">${this.user.profile?.displayName || this.user.email.split("@")[0]}</span>
+
+          <span class="user-name">
+            ${
+              this.user.profile?.displayName ||
+              this.user.email.split("@")[0]
+            }
+          </span>
+
           <i class="ti ti-chevron-down"></i>
         </div>
+
         <div class="user-dropdown">
           <a href="profile.html" class="dropdown-item">
             <i class="ti ti-user"></i> My Profile
           </a>
-          <a href="dashboard.html" class="dropdown-item">
-            <i class="ti ti-dashboard"></i> Dashboard
-          </a>
+
           <hr class="dropdown-divider">
+
           <button class="dropdown-item logout-btn" id="logout-btn">
             <i class="ti ti-logout"></i> Logout
           </button>
         </div>
       `;
+
       navbar.appendChild(userMenu);
 
-      document.getElementById("logout-btn").addEventListener("click", () => this.logout());
+      document
+        .getElementById("logout-btn")
+        .addEventListener("click", () => this.logout());
 
       const trigger = userMenu.querySelector(".user-menu-trigger");
       const dropdown = userMenu.querySelector(".user-dropdown");
+
       trigger.addEventListener("click", (e) => {
         e.stopPropagation();
         dropdown.classList.toggle("show");
@@ -111,6 +134,7 @@ const auth = {
       window.location.href = redirectUrl;
       return false;
     }
+
     return true;
   },
 };

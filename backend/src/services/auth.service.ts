@@ -6,6 +6,7 @@ import {
   LoginInput,
   SignupInput,
 } from "../validators/auth.validator";
+import crypto from "crypto";
 
 const BCRYPT_ROUNDS = 12;
 
@@ -46,7 +47,16 @@ export async function signup(input: SignupInput) {
       },
       select: userSelect,
     });
+    const verificationToken = crypto.randomBytes(32).toString("hex");
 
+    const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours from now
+    await tx.emailVerificationToken.create({
+      data: {
+        userId: created.id,
+        token: verificationToken,
+        expiresAt,
+      },
+    });
     return created;
   });
 

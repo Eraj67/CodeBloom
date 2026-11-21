@@ -8,14 +8,27 @@ datasource db {
 }
 
 model User {
-  id           String         @id @default(cuid())
-  email        String         @unique
-  passwordHash String
-  tokenVersion Int            @default(0)
-  createdAt    DateTime       @default(now())
-  updatedAt    DateTime       @updatedAt
-  profile      Profile?
-  progress     UserProgress[]
+  id              String         @id @default(cuid())
+  email           String         @unique
+  passwordHash    String
+  emailVerified   Boolean        @default(false)
+  emailVerifiedAt DateTime?
+  tokenVersion    Int            @default(0)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  profile         Profile?
+  progress        UserProgress[]
+  emailTokens     EmailVerificationToken[]
+}
+
+model EmailVerificationToken {
+  id          String   @id @default(cuid())
+  userId      String   
+  token       String   @unique
+  expiresAt   DateTime
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
 model Profile {

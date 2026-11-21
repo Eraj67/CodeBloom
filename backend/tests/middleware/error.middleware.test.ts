@@ -26,9 +26,13 @@ describe("notFoundHandler", () => {
 
 describe("errorHandler", () => {
   it("maps ZodError to 400 with flattened field errors", () => {
-    const schema = ZodError.create([
-      { code: "invalid_string", path: ["email"], message: "Invalid email" },
-    ]);
+    const schema = new ZodError([
+      {
+        code: "custom",
+        path: ["email"],
+        message: "Invalid email",
+      },
+   ]);
     const res = mockRes();
     errorHandler(schema, req, res, next);
     expect(res.status).toHaveBeenCalledWith(400);

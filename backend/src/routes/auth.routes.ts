@@ -11,6 +11,7 @@ import {
   changePasswordSchema,
   loginSchema,
   signupSchema,
+  verifyEmailSchema,
 } from "../validators/auth.validator";
 
 const router = Router();
@@ -66,6 +67,22 @@ router.patch("/password", requireAuth, authLimiter, async (req, res, next) => {
     const input = changePasswordSchema.parse(req.body);
     await authService.changePassword(req.userId!, input);
     res.json({ message: "Password updated successfully" });
+  } catch (error) {
+    next(error);
+  }
+});
+
+router.get("/verify-email", async (req, res, next) => {
+  try {
+    const input = verifyEmailSchema.parse({
+      token: req.query.token,
+    });
+
+    const result = await authService.verifyEmail(
+      input.token
+    );
+
+    res.json(result);
   } catch (error) {
     next(error);
   }

@@ -80,6 +80,37 @@ export async function signup(input: SignupInput) {
   return result.user;
 }
 
+export async function verifyEmail(token: string) {
+  const verificationToken =
+    await prisma.emailVerificationToken.findUnique({
+      where: { token },
+    });
+
+  if (!verificationToken) {
+    throw new AppError(400, "Invalid verification token");
+  }
+
+  if (verificationToken.expiresAt < new Date()) {
+    throw new AppError(400, "Verification token has expired");
+  }
+
+  await prisma.user.update({
+    where: { id: verificationToken.userId },
+    data: {
+      emailVerified: true,
+      emailVerifiedAt: new Date(),
+    },
+  });
+
+  await prisma.emailVerificationToken.delete({
+    where: { id: verificationToken.id },
+  });
+
+  return {
+    message: "Email verified successfully",
+  };
+}
+
 export async function login(input: LoginInput) {
   const email = input.email.trim().toLowerCase();
   const user = await prisma.user.findUnique({

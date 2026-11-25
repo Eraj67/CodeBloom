@@ -6,6 +6,8 @@ import {
   LoginInput,
   SignupInput,
 } from "../validators/auth.validator";
+import crypto from "crypto";
+import { sendVerificationEmail } from "./email.service";
 
 const BCRYPT_ROUNDS = 12;
 
@@ -25,7 +27,10 @@ const userSelect = {
 
 export async function signup(input: SignupInput) {
   const email = input.email.trim().toLowerCase();
-  const existing = await prisma.user.findUnique({ where: { email } });
+
+  const existing = await prisma.user.findUnique({
+    where: { email },
+  });
 
   if (existing) {
     throw new AppError(409, "Email already registered");
@@ -33,7 +38,7 @@ export async function signup(input: SignupInput) {
 
   const passwordHash = await bcrypt.hash(input.password, BCRYPT_ROUNDS);
 
-  const user = await prisma.$transaction(async (tx) => {
+  const result = await prisma.$transaction(async (tx) => {
     const created = await tx.user.create({
       data: {
         email,
@@ -47,10 +52,63 @@ export async function signup(input: SignupInput) {
       select: userSelect,
     });
 
-    return created;
+    const verificationToken = crypto.randomBytes(32).toString("hex");
+
+    const expiresAt = new Date(
+      Date.now() + 24 * 60 * 60 * 1000
+    );
+
+    await tx.emailVerificationToken.create({
+      data: {
+        userId: created.id,
+        token: verificationToken,
+        expiresAt,
+      },
+    });
+
+    return {
+      user: created,
+      verificationToken,
+    };
   });
 
-  return user;
+  await sendVerificationEmail(
+    result.user.email,
+    result.verificationToken
+  );
+
+  return result.user;
+}
+
+export async function verifyEmail(token: string) {
+  const verificationToken =
+    await prisma.emailVerificationToken.findUnique({
+      where: { token },
+    });
+
+  if (!verificationToken) {
+    throw new AppError(400, "Invalid verification token");
+  }
+
+  if (verificationToken.expiresAt < new Date()) {
+    throw new AppError(400, "Verification token has expired");
+  }
+
+  await prisma.user.update({
+    where: { id: verificationToken.userId },
+    data: {
+      emailVerified: true,
+      emailVerifiedAt: new Date(),
+    },
+  });
+
+  await prisma.emailVerificationToken.delete({
+    where: { id: verificationToken.id },
+  });
+
+  return {
+    message: "Email verified successfully",
+  };
 }
 
 export async function login(input: LoginInput) {

@@ -20,3 +20,10 @@ export const changePasswordSchema = z.object({
 });
 
 export type ChangePasswordInput = z.infer<typeof changePasswordSchema>;
+
+export const verifyEmailSchema = z.object({
+  token: z.string().min(1, "Verification token is required"),
+});
+
+export type VerifyEmailInput =
+  z.infer<typeof verifyEmailSchema>;

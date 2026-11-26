@@ -3,11 +3,21 @@ import bcrypt from "bcrypt";
 
 vi.mock("../../src/lib/prisma", () => {
   const prisma = {
-    user: { findUnique: vi.fn(), create: vi.fn(), update: vi.fn() },
+    user: {
+      findUnique: vi.fn(),
+      create: vi.fn(),
+      update: vi.fn(),
+    },
+    emailVerificationToken: {
+      create: vi.fn(),
+      findUnique: vi.fn(),
+      delete: vi.fn(),
+    },
     $transaction: vi.fn(),
     $connect: vi.fn(),
     $disconnect: vi.fn(),
-  };
+};
+
   return { prisma };
 });
 
